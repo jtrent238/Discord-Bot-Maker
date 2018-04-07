@@ -1,0 +1,14 @@
+C:\Users\User\source\repos\Discord Bot Maker\Discord Bot Maker\bin\Debug\Discord Bot Maker.exe.config
+C:\Users\User\source\repos\Discord Bot Maker\Discord Bot Maker\bin\Debug\Discord Bot Maker.exe
+C:\Users\User\source\repos\Discord Bot Maker\Discord Bot Maker\bin\Debug\Discord Bot Maker.pdb
+C:\Users\User\source\repos\Discord Bot Maker\Discord Bot Maker\bin\Debug\Discord Bot Maker.xml
+C:\Users\User\source\repos\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.vbprojResolveAssemblyReference.cache
+C:\Users\User\source\repos\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.Resources.resources
+C:\Users\User\source\repos\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.vbproj.GenerateResource.Cache
+C:\Users\User\source\repos\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.vbproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.exe
+C:\Users\User\source\repos\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.xml
+C:\Users\User\source\repos\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.pdb
+C:\Users\User\source\repos\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.NewBot.resources
+C:\Users\User\source\repos\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.SplashScreen.resources
+C:\Users\User\source\repos\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.DiscordBotMaker.resources

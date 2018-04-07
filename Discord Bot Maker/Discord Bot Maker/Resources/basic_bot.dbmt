@@ -1,0 +1,7 @@
+{
+  "template_name": "Basic Bot",
+  "template_version": "1.0.0.0",
+  "template_author": "jtrent238",
+  "bot_language": "English",
+  "bot_programlanguage": "discord.js"
+}
