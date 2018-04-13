@@ -47,9 +47,19 @@ Discord Bot Maker
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Discord_Bot_Maker.My.Resources.Resources.gear_settings">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Discord_Bot_Maker.My.Resources.Resources.new_bot">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:Discord_Bot_Maker.databaseDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
 </summary>
 </member>
 </members>

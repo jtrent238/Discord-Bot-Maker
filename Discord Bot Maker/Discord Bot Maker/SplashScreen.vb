@@ -19,7 +19,7 @@
         '
         '    Version.Text = System.String.Format(Version.Text, My.Application.Info.Version.Major, My.Application.Info.Version.Minor, My.Application.Info.Version.Build, My.Application.Info.Version.Revision)
 
-
+        label_version.Text = My.Application.Info.Version.ToString
     End Sub
 
 End Class
