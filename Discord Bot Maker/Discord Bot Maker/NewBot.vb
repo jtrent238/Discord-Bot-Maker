@@ -1,22 +1,28 @@
 ﻿Imports System.IO
+Imports System.IO.Compression
 
 Public Class NewBot
     Private Sub button_ok_Click(sender As Object, e As EventArgs) Handles button_ok.Click
 
         Dim NewBot = textbox_botname.Text.ToString
+        Dim NewBotDir = DiscordBotMaker.botdir.ToString + "\" + textbox_botname.Text.ToString
 
-        MkDir(DiscordBotMaker.botdir.ToString + "\" + textbox_botname.Text.ToString)
+        MkDir(NewBotDir)
+
+        ZipFile.ExtractToDirectory("./node.zip", NewBotDir + "/bin")
+
+
         Dim BotToken_Raw = textbox_bottoken.Text.ToString
-        Dim BotToken_Key = NETCore.Encrypt.EncryptProvider.CreateAesKey
-        Dim BotToken_Encrypted = NETCore.Encrypt.EncryptProvider.AESEncrypt(BotToken_Raw.ToString, BotToken_Key.ToString)
-        Dim BotToken_Decrypted = NETCore.Encrypt.EncryptProvider.AESDecrypt(BotToken_Encrypted, BotToken_Key.ToString)
+        'Dim BotToken_Key = NETCore.Encrypt.EncryptProvider.CreateAesKey
+        ''Dim BotToken_Encrypted = NETCore.Encrypt.EncryptProvider.AESEncrypt(BotToken_Raw.ToString, BotToken_Key.ToString)
+        ''Dim BotToken_Decrypted = NETCore.Encrypt.EncryptProvider.AESDecrypt(BotToken_Encrypted, BotToken_Key.ToString)
 
         ' Create a string array with the lines of text
         Dim lines() As String = {
             "BotName=" + NewBot,
             "BotTemplate=" + combo_bottemplate.SelectedText.ToString,
             "Author=" + textbox_author.Text.ToString,
-            "BotToken=" + BotToken_Encrypted ''textbox_bottoken.Text.ToString
+            "BotToken=" + BotToken_Raw ''textbox_bottoken.Text.ToString
         }
 
         ' Set a variable to the My Documents path.

@@ -102,6 +102,14 @@ Public Class DiscordBotMaker
         ''    MkDir(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker/saves")
         ''End If
 
+        Dim startInfo As New ProcessStartInfo()
+        Dim myprocess As New Process()
+        startInfo.FileName = ".\Node.js.5.3.0\content\.bin\node.cmd"
+        ''startInfo.Verb = "runas"
+        ''startInfo.Arguments = "/env /user:" + "Administrator" + " cmd"
+        myprocess.StartInfo = startInfo
+        myprocess.Start()
+
     End Sub
 
     Private Sub button_newbot_Click(sender As Object, e As EventArgs) Handles button_newbot.Click
