@@ -27,6 +27,11 @@ Discord Bot Maker
   Looks up a localized resource of type System.Byte[].
 </summary>
 </member>
+<member name="P:Discord_Bot_Maker.My.Resources.Resources.batch_files">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
 <member name="P:Discord_Bot_Maker.My.Resources.Resources.botmaker_logo">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -50,6 +55,24 @@ Discord Bot Maker
 <member name="P:Discord_Bot_Maker.My.Resources.Resources.gear_settings">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Discord_Bot_Maker.My.Resources.Resources.launch_bot">
+<summary>
+  Looks up a localized string similar to @echo off
+cls
+title Bot Console
+SET /p bot_name=
+SET /p bot_directory=
+SET bin=&quot;/bin&quot;
+SET node_executable=%bin%&quot;/node.exe&quot;
+::SET /p bot_version=
+::SET /p bot_author=
+
+cd %bot_directory%
+%bin%/node.exe
+echo %node_executable%
+node .
 </summary>
 </member>
 <member name="P:Discord_Bot_Maker.My.Resources.Resources.new_bot">

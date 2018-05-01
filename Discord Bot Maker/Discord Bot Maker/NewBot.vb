@@ -6,11 +6,17 @@ Public Class NewBot
 
         Dim NewBot = textbox_botname.Text.ToString
         Dim NewBotDir = DiscordBotMaker.botdir.ToString + "\" + textbox_botname.Text.ToString
+        ''Dim Template = combo_bottemplate.SelectedText.ToString + "_bot.zip"
 
         MkDir(NewBotDir)
 
         ZipFile.ExtractToDirectory("./node.zip", NewBotDir + "/bin")
+        ZipFile.ExtractToDirectory("./batch_files.zip", NewBotDir)
+        ZipFile.ExtractToDirectory("./basic_bot.zip", NewBotDir)
 
+        If combo_bottemplate.SelectedText.ToString.Equals("") Then
+            combo_bottemplate.SelectedText.ToString.Equals("basic")
+        End If
 
         Dim BotToken_Raw = textbox_bottoken.Text.ToString
         'Dim BotToken_Key = NETCore.Encrypt.EncryptProvider.CreateAesKey

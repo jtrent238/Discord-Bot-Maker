@@ -120,5 +120,7 @@ Public Class DiscordBotMaker
         SettingsMenu.Show()
     End Sub
 
-
+    Private Sub button_codeeditor_Click(sender As Object, e As EventArgs) Handles button_codeeditor.Click
+        CodeEditor.Show()
+    End Sub
 End Class

@@ -71,6 +71,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property batch_files() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("batch_files", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property botmaker_logo() As System.Drawing.Bitmap
@@ -117,6 +127,28 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("gear_settings", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to @echo off
+        '''cls
+        '''title Bot Console
+        '''SET /p bot_name=
+        '''SET /p bot_directory=
+        '''SET bin=&quot;/bin&quot;
+        '''SET node_executable=%bin%&quot;/node.exe&quot;
+        '''::SET /p bot_version=
+        '''::SET /p bot_author=
+        '''
+        '''cd %bot_directory%
+        '''%bin%/node.exe
+        '''echo %node_executable%
+        '''node .
+        '''</summary>
+        Friend ReadOnly Property launch_bot() As String
+            Get
+                Return ResourceManager.GetString("launch_bot", resourceCulture)
             End Get
         End Property
         

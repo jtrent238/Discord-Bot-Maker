@@ -39,12 +39,14 @@ Partial Class NewBot
         '
         'combo_bottemplate
         '
+        Me.combo_bottemplate.Enabled = False
         Me.combo_bottemplate.FormattingEnabled = True
-        Me.combo_bottemplate.Items.AddRange(New Object() {"Basic Bot"})
+        Me.combo_bottemplate.Items.AddRange(New Object() {"basic"})
         Me.combo_bottemplate.Location = New System.Drawing.Point(91, 115)
         Me.combo_bottemplate.Name = "combo_bottemplate"
         Me.combo_bottemplate.Size = New System.Drawing.Size(274, 21)
         Me.combo_bottemplate.TabIndex = 0
+        Me.combo_bottemplate.Text = "basic"
         '
         'label_bottemplate
         '

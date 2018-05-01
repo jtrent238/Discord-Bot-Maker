@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class DiscordBotMaker
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class DiscordBotMaker
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DiscordBotMaker))
         Me.label_version = New System.Windows.Forms.Label()
@@ -36,6 +36,7 @@ Partial Class DiscordBotMaker
         Me.button_settings = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.button_codeeditor = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -146,12 +147,22 @@ Partial Class DiscordBotMaker
         Me.PictureBox2.TabIndex = 0
         Me.PictureBox2.TabStop = False
         '
+        'button_codeeditor
+        '
+        Me.button_codeeditor.Location = New System.Drawing.Point(212, 240)
+        Me.button_codeeditor.Name = "button_codeeditor"
+        Me.button_codeeditor.Size = New System.Drawing.Size(75, 23)
+        Me.button_codeeditor.TabIndex = 2
+        Me.button_codeeditor.Text = "Code Editor"
+        Me.button_codeeditor.UseVisualStyleBackColor = True
+        '
         'DiscordBotMaker
         '
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(652, 272)
         Me.Controls.Add(Me.list_mybots)
         Me.Controls.Add(Me.button_settings)
+        Me.Controls.Add(Me.button_codeeditor)
         Me.Controls.Add(Me.button_botinfo)
         Me.Controls.Add(Me.button_editbot)
         Me.Controls.Add(Me.button_deletebot)
@@ -183,4 +194,5 @@ Partial Class DiscordBotMaker
     Friend WithEvents label_lastboteditedlabel As Label
     Friend WithEvents label_lastbotedited As Label
     Friend WithEvents button_settings As Button
+    Friend WithEvents button_codeeditor As Button
 End Class
