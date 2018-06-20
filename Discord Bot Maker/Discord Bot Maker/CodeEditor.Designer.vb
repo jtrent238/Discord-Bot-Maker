@@ -25,6 +25,7 @@ Partial Class CodeEditor
         Me.button_startbot = New System.Windows.Forms.Button()
         Me.button_installdependencies = New System.Windows.Forms.Button()
         Me.button_stopbot = New System.Windows.Forms.Button()
+        Me.button_console = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'button_startbot
@@ -54,11 +55,21 @@ Partial Class CodeEditor
         Me.button_stopbot.Text = "Stop Bot"
         Me.button_stopbot.UseVisualStyleBackColor = True
         '
+        'button_console
+        '
+        Me.button_console.Location = New System.Drawing.Point(129, 12)
+        Me.button_console.Name = "button_console"
+        Me.button_console.Size = New System.Drawing.Size(75, 23)
+        Me.button_console.TabIndex = 3
+        Me.button_console.Text = "Console"
+        Me.button_console.UseVisualStyleBackColor = True
+        '
         'CodeEditor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(506, 379)
+        Me.Controls.Add(Me.button_console)
         Me.Controls.Add(Me.button_installdependencies)
         Me.Controls.Add(Me.button_stopbot)
         Me.Controls.Add(Me.button_startbot)
@@ -71,4 +82,5 @@ Partial Class CodeEditor
     Friend WithEvents button_startbot As Button
     Friend WithEvents button_installdependencies As Button
     Friend WithEvents button_stopbot As Button
+    Friend WithEvents button_console As Button
 End Class

@@ -288,3 +288,4 @@ C:\Users\User\Documents\GitKraken\Discord-Bot-Maker\Discord Bot Maker\Discord Bo
 C:\Users\User\Documents\GitKraken\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.exe
 C:\Users\User\Documents\GitKraken\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.xml
 C:\Users\User\Documents\GitKraken\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.pdb
+C:\Users\User\Documents\GitKraken\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.ConsoleLog.resources

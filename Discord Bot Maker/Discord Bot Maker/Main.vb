@@ -7,7 +7,8 @@ Public Class DiscordBotMaker
     Public botdir = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker/bots"
     Public BotSaveFileExt = ".dbms"
     Public DiscordBotMakerFileExt = ".dbm"
-
+    Public ItchCommunity = "https://jtrent238.itch.io/discord-bot-maker/community"
+    Public HelpLink = ItchCommunity.ToString
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -122,5 +123,9 @@ Public Class DiscordBotMaker
 
     Private Sub button_codeeditor_Click(sender As Object, e As EventArgs) Handles button_codeeditor.Click
         CodeEditor.Show()
+    End Sub
+
+    Private Sub linklabel_gethelp_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabel_gethelp.LinkClicked
+
     End Sub
 End Class

@@ -14,152 +14,109 @@ Partial Class AboutBox
         End Try
     End Sub
 
-    Friend WithEvents TableLayoutPanel As System.Windows.Forms.TableLayoutPanel
-    Friend WithEvents LogoPictureBox As System.Windows.Forms.PictureBox
-    Friend WithEvents LabelProductName As System.Windows.Forms.Label
-    Friend WithEvents LabelVersion As System.Windows.Forms.Label
-    Friend WithEvents LabelCompanyName As System.Windows.Forms.Label
-    Friend WithEvents TextBoxDescription As System.Windows.Forms.TextBox
-    Friend WithEvents OKButton As System.Windows.Forms.Button
-    Friend WithEvents LabelCopyright As System.Windows.Forms.Label
-
     'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AboutBox))
-        Me.TableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
-        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
-        Me.LabelProductName = New System.Windows.Forms.Label()
-        Me.LabelVersion = New System.Windows.Forms.Label()
-        Me.LabelCopyright = New System.Windows.Forms.Label()
-        Me.LabelCompanyName = New System.Windows.Forms.Label()
-        Me.TextBoxDescription = New System.Windows.Forms.TextBox()
-        Me.OKButton = New System.Windows.Forms.Button()
-        Me.TableLayoutPanel.SuspendLayout()
-        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.label_product_name = New System.Windows.Forms.Label()
+        Me.label_copyright = New System.Windows.Forms.Label()
+        Me.label_version_number = New System.Windows.Forms.Label()
+        Me.button_ok = New System.Windows.Forms.Button()
+        Me.label_description = New System.Windows.Forms.Label()
+        Me.linklabel_gethelp = New System.Windows.Forms.LinkLabel()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TableLayoutPanel
+        'PictureBox1
         '
-        Me.TableLayoutPanel.ColumnCount = 2
-        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.0!))
-        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.0!))
-        Me.TableLayoutPanel.Controls.Add(Me.LogoPictureBox, 0, 0)
-        Me.TableLayoutPanel.Controls.Add(Me.LabelProductName, 1, 0)
-        Me.TableLayoutPanel.Controls.Add(Me.LabelVersion, 1, 1)
-        Me.TableLayoutPanel.Controls.Add(Me.LabelCopyright, 1, 2)
-        Me.TableLayoutPanel.Controls.Add(Me.LabelCompanyName, 1, 3)
-        Me.TableLayoutPanel.Controls.Add(Me.TextBoxDescription, 1, 4)
-        Me.TableLayoutPanel.Controls.Add(Me.OKButton, 1, 5)
-        Me.TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel.Location = New System.Drawing.Point(9, 9)
-        Me.TableLayoutPanel.Name = "TableLayoutPanel"
-        Me.TableLayoutPanel.RowCount = 6
-        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel.Size = New System.Drawing.Size(396, 258)
-        Me.TableLayoutPanel.TabIndex = 0
+        Me.PictureBox1.Image = Global.Discord_Bot_Maker.My.Resources.Resources.dbm_logo
+        Me.PictureBox1.Location = New System.Drawing.Point(3, -1)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(446, 120)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
         '
-        'LogoPictureBox
+        'label_product_name
         '
-        Me.LogoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
-        Me.LogoPictureBox.Location = New System.Drawing.Point(3, 3)
-        Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.TableLayoutPanel.SetRowSpan(Me.LogoPictureBox, 6)
-        Me.LogoPictureBox.Size = New System.Drawing.Size(124, 252)
-        Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.LogoPictureBox.TabIndex = 0
-        Me.LogoPictureBox.TabStop = False
+        Me.label_product_name.AutoSize = True
+        Me.label_product_name.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.label_product_name.Location = New System.Drawing.Point(12, 122)
+        Me.label_product_name.Name = "label_product_name"
+        Me.label_product_name.Size = New System.Drawing.Size(95, 13)
+        Me.label_product_name.TabIndex = 2
+        Me.label_product_name.Text = "Discord Bot Maker" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'LabelProductName
+        'label_copyright
         '
-        Me.LabelProductName.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LabelProductName.Location = New System.Drawing.Point(136, 0)
-        Me.LabelProductName.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
-        Me.LabelProductName.MaximumSize = New System.Drawing.Size(0, 17)
-        Me.LabelProductName.Name = "LabelProductName"
-        Me.LabelProductName.Size = New System.Drawing.Size(257, 17)
-        Me.LabelProductName.TabIndex = 0
-        Me.LabelProductName.Text = "Product Name"
-        Me.LabelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.label_copyright.AutoSize = True
+        Me.label_copyright.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.label_copyright.Location = New System.Drawing.Point(12, 148)
+        Me.label_copyright.Name = "label_copyright"
+        Me.label_copyright.Size = New System.Drawing.Size(226, 13)
+        Me.label_copyright.TabIndex = 2
+        Me.label_copyright.Text = "Copyright © 2018 jtrent238. All rights reserved."
+        Me.label_copyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'LabelVersion
+        'label_version_number
         '
-        Me.LabelVersion.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LabelVersion.Location = New System.Drawing.Point(136, 25)
-        Me.LabelVersion.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
-        Me.LabelVersion.MaximumSize = New System.Drawing.Size(0, 17)
-        Me.LabelVersion.Name = "LabelVersion"
-        Me.LabelVersion.Size = New System.Drawing.Size(257, 17)
-        Me.LabelVersion.TabIndex = 0
-        Me.LabelVersion.Text = "Version"
-        Me.LabelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.label_version_number.AutoSize = True
+        Me.label_version_number.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.label_version_number.Location = New System.Drawing.Point(12, 135)
+        Me.label_version_number.Name = "label_version_number"
+        Me.label_version_number.Size = New System.Drawing.Size(55, 13)
+        Me.label_version_number.TabIndex = 2
+        Me.label_version_number.Text = "{$version}"
         '
-        'LabelCopyright
+        'button_ok
         '
-        Me.LabelCopyright.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LabelCopyright.Location = New System.Drawing.Point(136, 50)
-        Me.LabelCopyright.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
-        Me.LabelCopyright.MaximumSize = New System.Drawing.Size(0, 17)
-        Me.LabelCopyright.Name = "LabelCopyright"
-        Me.LabelCopyright.Size = New System.Drawing.Size(257, 17)
-        Me.LabelCopyright.TabIndex = 0
-        Me.LabelCopyright.Text = "Copyright"
-        Me.LabelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.button_ok.Location = New System.Drawing.Point(374, 188)
+        Me.button_ok.Name = "button_ok"
+        Me.button_ok.Size = New System.Drawing.Size(75, 23)
+        Me.button_ok.TabIndex = 3
+        Me.button_ok.Text = "Ok"
+        Me.button_ok.UseVisualStyleBackColor = True
         '
-        'LabelCompanyName
+        'label_description
         '
-        Me.LabelCompanyName.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LabelCompanyName.Location = New System.Drawing.Point(136, 75)
-        Me.LabelCompanyName.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
-        Me.LabelCompanyName.MaximumSize = New System.Drawing.Size(0, 17)
-        Me.LabelCompanyName.Name = "LabelCompanyName"
-        Me.LabelCompanyName.Size = New System.Drawing.Size(257, 17)
-        Me.LabelCompanyName.TabIndex = 0
-        Me.LabelCompanyName.Text = "Company Name"
-        Me.LabelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.label_description.AutoSize = True
+        Me.label_description.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.label_description.Location = New System.Drawing.Point(12, 188)
+        Me.label_description.Name = "label_description"
+        Me.label_description.Size = New System.Drawing.Size(44, 13)
+        Me.label_description.TabIndex = 2
+        Me.label_description.Text = "{$desc}"
+        Me.label_description.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'TextBoxDescription
+        'linklabel_gethelp
         '
-        Me.TextBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBoxDescription.Location = New System.Drawing.Point(136, 103)
-        Me.TextBoxDescription.Margin = New System.Windows.Forms.Padding(6, 3, 3, 3)
-        Me.TextBoxDescription.Multiline = True
-        Me.TextBoxDescription.Name = "TextBoxDescription"
-        Me.TextBoxDescription.ReadOnly = True
-        Me.TextBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TextBoxDescription.Size = New System.Drawing.Size(257, 123)
-        Me.TextBoxDescription.TabIndex = 0
-        Me.TextBoxDescription.TabStop = False
-        Me.TextBoxDescription.Text = resources.GetString("TextBoxDescription.Text")
-        '
-        'OKButton
-        '
-        Me.OKButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.OKButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.OKButton.Location = New System.Drawing.Point(318, 232)
-        Me.OKButton.Name = "OKButton"
-        Me.OKButton.Size = New System.Drawing.Size(75, 23)
-        Me.OKButton.TabIndex = 0
-        Me.OKButton.Text = "&OK"
+        Me.linklabel_gethelp.AutoSize = True
+        Me.linklabel_gethelp.LinkColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.linklabel_gethelp.Location = New System.Drawing.Point(12, 161)
+        Me.linklabel_gethelp.Name = "linklabel_gethelp"
+        Me.linklabel_gethelp.Size = New System.Drawing.Size(64, 13)
+        Me.linklabel_gethelp.TabIndex = 4
+        Me.linklabel_gethelp.TabStop = True
+        Me.linklabel_gethelp.Text = "Need Help?"
         '
         'AboutBox
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.OKButton
-        Me.ClientSize = New System.Drawing.Size(414, 276)
-        Me.Controls.Add(Me.TableLayoutPanel)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(460, 223)
+        Me.Controls.Add(Me.linklabel_gethelp)
+        Me.Controls.Add(Me.button_ok)
+        Me.Controls.Add(Me.label_description)
+        Me.Controls.Add(Me.label_copyright)
+        Me.Controls.Add(Me.label_version_number)
+        Me.Controls.Add(Me.label_product_name)
+        Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -168,11 +125,16 @@ Partial Class AboutBox
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "AboutBox"
-        Me.TableLayoutPanel.ResumeLayout(False)
-        Me.TableLayoutPanel.PerformLayout()
-        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-
+    Friend WithEvents PictureBox1 As PictureBox
+    Public WithEvents label_product_name As Label
+    Public WithEvents label_copyright As Label
+    Public WithEvents label_version_number As Label
+    Friend WithEvents button_ok As Button
+    Public WithEvents label_description As Label
+    Friend WithEvents linklabel_gethelp As LinkLabel
 End Class

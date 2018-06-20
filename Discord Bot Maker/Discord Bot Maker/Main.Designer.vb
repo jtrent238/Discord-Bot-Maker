@@ -37,6 +37,7 @@ Partial Class DiscordBotMaker
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.button_codeeditor = New System.Windows.Forms.Button()
+        Me.linklabel_gethelp = New System.Windows.Forms.LinkLabel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -156,10 +157,22 @@ Partial Class DiscordBotMaker
         Me.button_codeeditor.Text = "Code Editor"
         Me.button_codeeditor.UseVisualStyleBackColor = True
         '
+        'linklabel_gethelp
+        '
+        Me.linklabel_gethelp.AutoSize = True
+        Me.linklabel_gethelp.LinkColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.linklabel_gethelp.Location = New System.Drawing.Point(179, 69)
+        Me.linklabel_gethelp.Name = "linklabel_gethelp"
+        Me.linklabel_gethelp.Size = New System.Drawing.Size(64, 13)
+        Me.linklabel_gethelp.TabIndex = 5
+        Me.linklabel_gethelp.TabStop = True
+        Me.linklabel_gethelp.Text = "Need Help?"
+        '
         'DiscordBotMaker
         '
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(652, 272)
+        Me.Controls.Add(Me.linklabel_gethelp)
         Me.Controls.Add(Me.list_mybots)
         Me.Controls.Add(Me.button_settings)
         Me.Controls.Add(Me.button_codeeditor)
@@ -195,4 +208,5 @@ Partial Class DiscordBotMaker
     Friend WithEvents label_lastbotedited As Label
     Friend WithEvents button_settings As Button
     Friend WithEvents button_codeeditor As Button
+    Friend WithEvents linklabel_gethelp As LinkLabel
 End Class

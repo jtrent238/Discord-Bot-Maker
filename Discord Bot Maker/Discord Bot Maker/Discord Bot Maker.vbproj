@@ -221,6 +221,12 @@
     <Compile Include="CodeEditor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ConsoleLog.Designer.vb">
+      <DependentUpon>ConsoleLog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsoleLog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="databaseDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -281,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CodeEditor.resx">
       <DependentUpon>CodeEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsoleLog.resx">
+      <DependentUpon>ConsoleLog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
