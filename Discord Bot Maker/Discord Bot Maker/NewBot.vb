@@ -61,7 +61,7 @@ Public Class NewBot
             "title Bot Console",
             "SET /p bot_name=",
             "SET /p ",
-            "SET bot_directory=" + NewBotDir,
+            "SET bot_directory=" + "'" + NewBotDir + "'",
             "SET bin=" + binLoc,
             "SET node_executable=%bin%" + node_executable,
             "SET /p bot_version=",
