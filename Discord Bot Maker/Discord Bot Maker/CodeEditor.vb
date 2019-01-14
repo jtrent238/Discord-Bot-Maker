@@ -4,7 +4,7 @@
         Me.Enabled.Equals(False)
         Dim startInfo As New ProcessStartInfo()
         Dim myprocess As New Process()
-        startInfo.FileName = DiscordBotMaker.botdir + "launch_bot.bat"
+        startInfo.FileName = DiscordBotMaker.SelectedBotDir + "/launch_bot.bat"
         startInfo.Verb = "runas"
         startInfo.Arguments = "/env /user:" + "Administrator" + " cmd"
         myprocess.StartInfo = startInfo
@@ -16,7 +16,7 @@
         Me.Enabled.Equals(False)
         Dim startInfo As New ProcessStartInfo()
         Dim myprocess As New Process()
-        startInfo.FileName = DiscordBotMaker.botdir + "killbot.bat"
+        startInfo.FileName = DiscordBotMaker.SelectedBotDir + "/killbot.bat"
         ''startInfo.Verb = "runas"
         ''startInfo.Arguments = "/env /user:" + "Administrator" + " cmd"
         myprocess.StartInfo = startInfo
@@ -26,7 +26,7 @@
     Private Sub button_installdependencies_Click(sender As Object, e As EventArgs) Handles button_installdependencies.Click
         Dim startInfo As New ProcessStartInfo()
         Dim myprocess As New Process()
-        startInfo.FileName = DiscordBotMaker.botdir + "install_dependencies.bat"
+        startInfo.FileName = DiscordBotMaker.SelectedBotDir + "/install_dependencies.bat"
         startInfo.Verb = "runas"
         startInfo.Arguments = "/env /user:" + "Administrator" + " cmd"
         myprocess.StartInfo = startInfo

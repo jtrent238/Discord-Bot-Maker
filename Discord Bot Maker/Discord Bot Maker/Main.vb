@@ -7,8 +7,10 @@ Public Class DiscordBotMaker
     Public botdir = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker/bots"
     Public BotSaveFileExt = ".dbms"
     Public DiscordBotMakerFileExt = ".dbm"
+    Public SelectedBotDir = botdir + "/0"
     Public ItchCommunity = "https://jtrent238.itch.io/discord-bot-maker/community"
     Public HelpLink = ItchCommunity.ToString
+    Public NodeLink = "https://nodejs.org/en/"
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -103,13 +105,13 @@ Public Class DiscordBotMaker
         ''    MkDir(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker/saves")
         ''End If
 
-        Dim startInfo As New ProcessStartInfo()
-        Dim myprocess As New Process()
-        startInfo.FileName = ".\Node.js.5.3.0\content\.bin\node.cmd"
+        'Dim startInfo As New ProcessStartInfo()
+        'Dim myprocess As New Process()
+        'startInfo.FileName = ".\Node.js.5.3.0\content\.bin\node.cmd"
         ''startInfo.Verb = "runas"
         ''startInfo.Arguments = "/env /user:" + "Administrator" + " cmd"
-        myprocess.StartInfo = startInfo
-        myprocess.Start()
+        'myprocess.StartInfo = startInfo
+        'myprocess.Start()
 
     End Sub
 
@@ -125,7 +127,4 @@ Public Class DiscordBotMaker
         CodeEditor.Show()
     End Sub
 
-    Private Sub linklabel_gethelp_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabel_gethelp.LinkClicked
-
-    End Sub
 End Class

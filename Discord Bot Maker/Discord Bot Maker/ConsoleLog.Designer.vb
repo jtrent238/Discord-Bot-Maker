@@ -44,13 +44,13 @@ Partial Class ConsoleLog
         Me.TextBox1.Size = New System.Drawing.Size(609, 180)
         Me.TextBox1.TabIndex = 0
         '
-        'Console
+        'ConsoleLog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(633, 204)
         Me.Controls.Add(Me.TextBox1)
-        Me.Name = "Console"
+        Me.Name = "ConsoleLog"
         Me.Text = "Console"
         CType(Me.EventLog1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

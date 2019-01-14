@@ -2,8 +2,13 @@
 Imports System.IO.Compression
 
 Public Class NewBot
-    Private Sub button_ok_Click(sender As Object, e As EventArgs) Handles button_ok.Click
 
+    'Public NewBotDir2 = DiscordBotMaker.botdir.ToString + "\" + textbox_botname.Text.ToString
+
+    Private Sub NewBot_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+    Private Sub button_ok_Click(sender As Object, e As EventArgs) Handles button_ok.Click
         Dim NewBot = textbox_botname.Text.ToString
         Dim NewBotDir = DiscordBotMaker.botdir.ToString + "\" + textbox_botname.Text.ToString
         ''Dim Template = combo_bottemplate.SelectedText.ToString + "_bot.zip"
@@ -11,7 +16,7 @@ Public Class NewBot
         MkDir(NewBotDir)
 
         ZipFile.ExtractToDirectory("./node.zip", NewBotDir + "/bin")
-        ZipFile.ExtractToDirectory("./batch_files.zip", NewBotDir)
+        ''ZipFile.ExtractToDirectory("./batch_files.zip", NewBotDir)
         ZipFile.ExtractToDirectory("./basic_bot.zip", NewBotDir)
 
         If combo_bottemplate.SelectedText.ToString.Equals("") Then
@@ -34,13 +39,8 @@ Public Class NewBot
         Dim dependenciesBat() As String = {
             "@echo off",
             "cls",
-            "SET bot_directory=" + NewBotDir,
-            "cd %bot_directory%",
             "echo Installing Dependencies!",
-            "npm install ffmpeg --save",
             "npm install request --save",
-            "npm install node-opus --save",
-            "npm install opusscript --save",
             "npm install discord.js --save",
             "echo Dependencies Installed!",
             "pause> nul"
@@ -59,17 +59,6 @@ Public Class NewBot
             "@echo off",
             "cls",
             "title Bot Console",
-            "SET /p bot_name=",
-            "SET /p ",
-            "SET bot_directory=" + "'" + NewBotDir + "'",
-            "SET bin=" + binLoc,
-            "SET node_executable=%bin%" + node_executable,
-            "SET /p bot_version=",
-            "SET /p bot_author=",
-            "cd %bot_directory%",
-            "cd bin",
-            "npm i npm",
-            "npm install discord.js",
             "echo Please wait while Dependencies are installed...",
             "start install_dependencies.bat",
             "echo Dependencies Installed...",
@@ -128,4 +117,5 @@ Public Class NewBot
         MsgBox("Bot Created!")
         Me.Close()
     End Sub
+
 End Class
