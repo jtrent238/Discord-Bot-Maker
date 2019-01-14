@@ -31,6 +31,52 @@ Public Class NewBot
             "BotToken=" + BotToken_Raw ''textbox_bottoken.Text.ToString
         }
 
+        Dim dependenciesBat() As String = {
+            "@echo off",
+            "cls",
+            "SET bot_directory=" + NewBotDir,
+            "cd %bot_directory%",
+            "echo Installing Dependencies!",
+            "npm install ffmpeg --save",
+            "npm install request --save",
+            "npm install node-opus --save",
+            "npm install opusscript --save",
+            "npm install discord.js --save",
+            "echo Dependencies Installed!",
+            "pause> nul"
+        }
+
+        Dim killBotBat() As String = {
+            "@echo off",
+            "cls",
+            "taskkill / f / im node.exe"
+        }
+
+        Dim binLoc = "/bin"
+        Dim node_executable = "/node.exe"
+
+        Dim launchBotBat() As String = {
+            "@echo off",
+            "cls",
+            "title Bot Console",
+            "SET /p bot_name=",
+            "SET /p ",
+            "SET bot_directory=" + NewBotDir,
+            "SET bin=" + binLoc,
+            "SET node_executable=%bin%" + node_executable,
+            "SET /p bot_version=",
+            "SET /p bot_author=",
+            "cd %bot_directory%",
+            "cd bin",
+            "npm i npm",
+            "npm install discord.js",
+            "echo Please wait while Dependencies are installed...",
+            "start install_dependencies.bat",
+            "echo Dependencies Installed...",
+            "npm start app.js",
+            "pause> nul"
+        }
+
         ' Set a variable to the My Documents path.
         Dim mydocpath As String = DiscordBotMaker.botdir
 
@@ -41,6 +87,26 @@ Public Class NewBot
             Next
         End Using
 
+        ' Write the string array to a new file named "WriteLines.txt".
+        Using outputFile As New StreamWriter(mydocpath & Convert.ToString("\" + NewBot + "\" + "install_dependencies.bat"))
+            For Each line As String In dependenciesBat
+                outputFile.WriteLine(line)
+            Next
+        End Using
+
+        ' Write the string array to a new file named "WriteLines.txt".
+        Using outputFile As New StreamWriter(mydocpath & Convert.ToString("\" + NewBot + "\" + "killbot.bat"))
+            For Each line As String In killBotBat
+                outputFile.WriteLine(line)
+            Next
+        End Using
+
+        ' Write the string array to a new file named "WriteLines.txt".
+        Using outputFile As New StreamWriter(mydocpath & Convert.ToString("\" + NewBot + "\" + "launch_bot.bat"))
+            For Each line As String In launchBotBat
+                outputFile.WriteLine(line)
+            Next
+        End Using
         ' Set a variable to the My Documents path.
         Dim mydocpath1 As String = DiscordBotMaker.dir
 
