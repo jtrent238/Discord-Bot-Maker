@@ -335,14 +335,38 @@ C:\Users\PK12101\Desktop\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Mak
 C:\Users\PK12101\Desktop\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\System.Collections.Immutable.xml
 C:\Users\PK12101\Desktop\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\PK12101\Desktop\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.vbproj.CopyComplete
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.AboutBox.resources
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.AutoUpdater.resources
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.CodeEditor.resources
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.ConsoleLog.resources
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.Login.resources
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.DiscordBotMaker.resources
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.Resources.resources
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.NewBot.resources
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.SelfBotInfo.resources
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.SettingsMenu.resources
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.SplashScreen.resources
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.vbproj.GenerateResource.cache
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.vbproj.CoreCompileInputs.cache
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.vbprojAssemblyReference.cache
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.exe.config
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\database.accdb
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\Discord Bot Maker.exe.config
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\Discord Bot Maker.exe
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\Discord Bot Maker.pdb
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\Discord Bot Maker.xml
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\EntityFramework.dll
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\ICSharpCode.TextEditor.dll
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\log4net.dll
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\Nancy.dll
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\NETCore.Encrypt.dll
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\SharpRaven.dll
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\SharpRaven.Log4Net.dll
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\SharpRaven.Nancy.dll
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\System.AppContext.dll
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\System.Collections.Immutable.dll
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\System.Console.dll
@@ -360,25 +384,16 @@ C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Deb
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\System.Security.Cryptography.Primitives.dll
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\System.Security.Cryptography.X509Certificates.dll
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\EntityFramework.xml
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\log4net.xml
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\Nancy.xml
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\Newtonsoft.Json.xml
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\System.Collections.Immutable.xml
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.exe.config
-C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.AboutBox.resources
-C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.AutoUpdater.resources
-C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.CodeEditor.resources
-C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.ConsoleLog.resources
-C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.DiscordBotMaker.resources
-C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.Resources.resources
-C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.NewBot.resources
-C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.SettingsMenu.resources
-C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.SplashScreen.resources
-C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.vbproj.GenerateResource.cache
-C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.vbproj.CoreCompileInputs.cache
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.vbproj.CopyComplete
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.exe
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.xml
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.pdb
-C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.vbprojAssemblyReference.cache
-C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.Login.resources
-C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.SelfBotInfo.resources

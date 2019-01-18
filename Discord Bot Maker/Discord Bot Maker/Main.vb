@@ -1,4 +1,6 @@
 ﻿Imports System.IO
+Imports SharpRaven
+Imports SharpRaven.Data
 
 Public Class DiscordBotMaker
 
@@ -11,6 +13,8 @@ Public Class DiscordBotMaker
     Public ItchCommunity = "https://jtrent238.itch.io/discord-bot-maker/community"
     Public HelpLink = ItchCommunity.ToString
     Public NodeLink = "https://nodejs.org/en/"
+
+    Public ravenClient = New RavenClient("https://70c460dc237841ba8dfb44b366326cf1:6778d55f32b04c51a8540f25808ee1d7@sentry.io/216241")
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
