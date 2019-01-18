@@ -380,3 +380,5 @@ C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Deb
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.xml
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.pdb
 C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord Bot Maker.vbprojAssemblyReference.cache
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.Login.resources
+C:\Users\jtren\git\Discord-Bot-Maker\Discord Bot Maker\Discord Bot Maker\obj\Debug\Discord_Bot_Maker.SelfBotInfo.resources

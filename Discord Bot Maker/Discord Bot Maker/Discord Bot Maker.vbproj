@@ -245,6 +245,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>databaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Main.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +277,12 @@
       <DependentUpon>NewBot.vb</DependentUpon>
     </Compile>
     <Compile Include="NewBot.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelfBotInfo.Designer.vb">
+      <DependentUpon>SelfBotInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelfBotInfo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Settings.Designer.vb">
@@ -304,6 +316,9 @@
     <EmbeddedResource Include="ConsoleLog.resx">
       <DependentUpon>ConsoleLog.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
@@ -315,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewBot.resx">
       <DependentUpon>NewBot.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelfBotInfo.resx">
+      <DependentUpon>SelfBotInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsMenu.resx">
       <DependentUpon>SettingsMenu.vb</DependentUpon>

@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.IO.Compression
+Imports FxResources.System.IO.Compression
 
 Public Class NewBot
 
