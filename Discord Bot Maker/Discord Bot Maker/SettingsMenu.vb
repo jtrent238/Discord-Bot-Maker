@@ -1,36 +1,64 @@
-﻿Public Class SettingsMenu
+﻿Imports SharpRaven.Data
+
+Public Class SettingsMenu
+
+    Dim ravenClient = DiscordBotMaker.ravenClient
+
     Private Sub button_updates_Click(sender As Object, e As EventArgs) Handles button_updates.Click
-        MsgBox("WORK IN PROGRESS!!!")
+        Try
+            MsgBox("WORK IN PROGRESS!!!")
+        Catch exception As Exception
+            ravenClient.Capture(New SentryEvent(exception))
+        End Try
     End Sub
 
     Private Sub button_about_Click(sender As Object, e As EventArgs) Handles button_about.Click
-        AboutBox.Show()
+        Try
+            AboutBox.Show()
+        Catch exception As Exception
+            ravenClient.Capture(New SentryEvent(exception))
+        End Try
     End Sub
     Private Sub button_apply_Click(sender As Object, e As EventArgs) Handles button_apply.Click
-        If checkbox_console.Checked.Equals(True) Then
-            Settings.Default.enable_console.Equals(True)
-        End If
-        If checkbox_console.Checked.Equals(False) Then
-            Settings.Default.enable_console.Equals(False)
-        End If
+        Try
+            If checkbox_console.Checked.Equals(True) Then
+                Settings.Default.enable_console.Equals(True)
+            End If
+            If checkbox_console.Checked.Equals(False) Then
+                Settings.Default.enable_console.Equals(False)
+            End If
+        Catch exception As Exception
+            ravenClient.Capture(New SentryEvent(exception))
+        End Try
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs)
-        AutoUpdater.Show()
+        Try
+            AutoUpdater.Show()
+        Catch exception As Exception
+            ravenClient.Capture(New SentryEvent(exception))
+        End Try
     End Sub
 
     Private Sub SettingsMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
 
-        If Settings.Default.enable_console.Equals(True) Then
-            checkbox_console.Equals(True)
-        End If
-        If Settings.Default.Equals(False) Then
-            checkbox_console.Equals(False)
-        End If
-
+            If Settings.Default.enable_console.Equals(True) Then
+                checkbox_console.Equals(True)
+            End If
+            If Settings.Default.Equals(False) Then
+                checkbox_console.Equals(False)
+            End If
+        Catch exception As Exception
+            ravenClient.Capture(New SentryEvent(exception))
+        End Try
     End Sub
 
     Private Sub SettingsMenu_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
-        Settings.Default.Save()
+        Try
+            Settings.Default.Save()
+        Catch exception As Exception
+            ravenClient.Capture(New SentryEvent(exception))
+        End Try
     End Sub
 
 End Class

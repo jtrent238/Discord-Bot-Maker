@@ -14,121 +14,136 @@ Public Class DiscordBotMaker
     Public HelpLink = ItchCommunity.ToString
     Public NodeLink = "https://nodejs.org/en/"
 
-    Public ravenClient = New RavenClient("https://70c460dc237841ba8dfb44b366326cf1:6778d55f32b04c51a8540f25808ee1d7@sentry.io/216241")
+    Public ravenClient = New RavenClient("https://3491a4a1a3604bce81b9b758d718377a@sentry.io/1374825")
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        label_version.Text = My.Application.Info.Version.ToString
+        Try
+            label_version.Text = My.Application.Info.Version.ToString
 
-        Dim url = "https://gist.githubusercontent.com/jtrent238/c798e2a638d6dc697a2e71c80a941004/raw/f1c854915e7761acc00e845bf3e85f3e8184e4e2/testfile"
+            Dim url = "https://gist.githubusercontent.com/jtrent238/c798e2a638d6dc697a2e71c80a941004/raw/f1c854915e7761acc00e845bf3e85f3e8184e4e2/testfile"
 
-        If File.Exists(dir + "/newverfile" + DiscordBotMakerFileExt.ToString) Then
-            File.Delete(dir + "/newverfile" + DiscordBotMakerFileExt.ToString)
-        Else
+            If File.Exists(dir + "/newverfile" + DiscordBotMakerFileExt.ToString) Then
+                File.Delete(dir + "/newverfile" + DiscordBotMakerFileExt.ToString)
+            Else
+                My.Computer.Network.DownloadFile(url, dir + "/newverfile" + DiscordBotMakerFileExt.ToString)
+            End If
+
             My.Computer.Network.DownloadFile(url, dir + "/newverfile" + DiscordBotMakerFileExt.ToString)
-        End If
 
-        My.Computer.Network.DownloadFile(url, dir + "/newverfile" + DiscordBotMakerFileExt.ToString)
+            Try
+                ' Create an instance of StreamReader to read from a file.
+                ' The using statement also closes the StreamReader.
+                Using sr As New StreamReader(dir.ToString + "/last_bot_edited" + BotSaveFileExt.ToString)
+                    Dim line As String
+                    ' Read and display lines from the file until the end of
+                    ' the file is reached.
+                    Do
+                        line = sr.ReadLine()
+                        If Not (line Is Nothing) Then
+                            Console.WriteLine(line)
+                            label_lastbotedited.Text = line
+                        End If
+                    Loop Until line Is Nothing
+                End Using
+            Catch ef As Exception
+                ' Let the user know what went wrong.
+                Console.WriteLine("The file could not be read:")
+                Console.WriteLine(ef.Message)
+            End Try
 
-        Try
-            ' Create an instance of StreamReader to read from a file.
-            ' The using statement also closes the StreamReader.
-            Using sr As New StreamReader(dir.ToString + "/last_bot_edited" + BotSaveFileExt.ToString)
-                Dim line As String
-                ' Read and display lines from the file until the end of
-                ' the file is reached.
-                Do
-                    line = sr.ReadLine()
-                    If Not (line Is Nothing) Then
-                        Console.WriteLine(line)
-                        label_lastbotedited.Text = line
+            Try
+                ' Create an instance of StreamReader to read from a file.
+                ' The using statement also closes the StreamReader.
+                Using sr As New StreamReader(dir.ToString + "/bots" + BotSaveFileExt.ToString)
+                    Dim line As String
+                    ' Read and display lines from the file until the end of
+                    ' the file is reached.
+                    Do
+                        line = sr.ReadLine()
+                        If Not (line Is Nothing) Then
+                            Console.WriteLine(line)
+                            list_mybots.Items.Add(line)
+                        End If
+                    Loop Until line Is Nothing
+                End Using
+            Catch ef As Exception
+                ' Let the user know what went wrong.
+                Console.WriteLine("The file could not be read:")
+                Console.WriteLine(ef.Message)
+            End Try
+
+            Try
+                Using sr As New StreamReader(DiscordBotMakerDir.ToString + "/newverfile" + DiscordBotMakerFileExt.ToString)
+                    Dim line As String
+                    ' Read and display lines from the file until the end of
+                    ' the file is reached.
+                    Do
+                        line = sr.ReadLine()
+                        If Not (line Is Nothing) Then
+                            Console.WriteLine(line)
+                            Dim newver = line
+                        End If
+                    Loop Until line Is Nothing
+
+                    If My.Application.Info.Version.ToString = line Then
+                        AutoUpdater.Show()
+                    Else Console.WriteLine("Error Getting update data")
                     End If
-                Loop Until line Is Nothing
-            End Using
-        Catch ef As Exception
-            ' Let the user know what went wrong.
-            Console.WriteLine("The file could not be read:")
-            Console.WriteLine(ef.Message)
+                End Using
+            Catch ef As Exception
+                ' Let the user know what went wrong.
+                Console.WriteLine("The file could not be read:")
+                Console.WriteLine(ef.Message)
+            End Try
+
+
+            ''Make Directories
+            ''If File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker") Then
+            ''    Console.Write("Directory """ + Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker" + "Already Exists")
+            ''Else
+            ''    MkDir(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker")
+            ''End If
+            ''If File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker/saves") Then
+            ''    Console.Write("Directory """ + Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker/saves" + " Already Exists")
+            ''Else
+            ''    MkDir(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker/saves")
+            ''End If
+
+            'Dim startInfo As New ProcessStartInfo()
+            'Dim myprocess As New Process()
+            'startInfo.FileName = ".\Node.js.5.3.0\content\.bin\node.cmd"
+            ''startInfo.Verb = "runas"
+            ''startInfo.Arguments = "/env /user:" + "Administrator" + " cmd"
+            'myprocess.StartInfo = startInfo
+            'myprocess.Start()
+        Catch Exception As Exception
+            ravenClient.Capture(New SentryEvent(Exception))
         End Try
-
-        Try
-            ' Create an instance of StreamReader to read from a file.
-            ' The using statement also closes the StreamReader.
-            Using sr As New StreamReader(dir.ToString + "/bots" + BotSaveFileExt.ToString)
-                Dim line As String
-                ' Read and display lines from the file until the end of
-                ' the file is reached.
-                Do
-                    line = sr.ReadLine()
-                    If Not (line Is Nothing) Then
-                        Console.WriteLine(line)
-                        list_mybots.Items.Add(line)
-                    End If
-                Loop Until line Is Nothing
-            End Using
-        Catch ef As Exception
-            ' Let the user know what went wrong.
-            Console.WriteLine("The file could not be read:")
-            Console.WriteLine(ef.Message)
-        End Try
-
-        Try
-            Using sr As New StreamReader(DiscordBotMakerDir.ToString + "/newverfile" + DiscordBotMakerFileExt.ToString)
-                Dim line As String
-                ' Read and display lines from the file until the end of
-                ' the file is reached.
-                Do
-                    line = sr.ReadLine()
-                    If Not (line Is Nothing) Then
-                        Console.WriteLine(line)
-                        Dim newver = line
-                    End If
-                Loop Until line Is Nothing
-
-                If My.Application.Info.Version.ToString = line Then
-                    AutoUpdater.Show()
-                Else Console.WriteLine("Error Getting update data")
-                End If
-            End Using
-        Catch ef As Exception
-            ' Let the user know what went wrong.
-            Console.WriteLine("The file could not be read:")
-            Console.WriteLine(ef.Message)
-        End Try
-
-
-        ''Make Directories
-        ''If File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker") Then
-        ''    Console.Write("Directory """ + Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker" + "Already Exists")
-        ''Else
-        ''    MkDir(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker")
-        ''End If
-        ''If File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker/saves") Then
-        ''    Console.Write("Directory """ + Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker/saves" + " Already Exists")
-        ''Else
-        ''    MkDir(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/jtrent238/Discord Bot Maker/saves")
-        ''End If
-
-        'Dim startInfo As New ProcessStartInfo()
-        'Dim myprocess As New Process()
-        'startInfo.FileName = ".\Node.js.5.3.0\content\.bin\node.cmd"
-        ''startInfo.Verb = "runas"
-        ''startInfo.Arguments = "/env /user:" + "Administrator" + " cmd"
-        'myprocess.StartInfo = startInfo
-        'myprocess.Start()
-
     End Sub
 
     Private Sub button_newbot_Click(sender As Object, e As EventArgs) Handles button_newbot.Click
-        NewBot.Show()
+        Try
+            NewBot.Show()
+        Catch exception As Exception
+            ravenClient.Capture(New SentryEvent(exception))
+        End Try
     End Sub
 
     Private Sub button_settings_Click(sender As Object, e As EventArgs) Handles button_settings.Click
-        SettingsMenu.Show()
+        Try
+            SettingsMenu.Show()
+        Catch exception As Exception
+            ravenClient.Capture(New SentryEvent(exception))
+        End Try
     End Sub
 
     Private Sub button_codeeditor_Click(sender As Object, e As EventArgs) Handles button_codeeditor.Click
-        CodeEditor.Show()
+        Try
+            CodeEditor.Show()
+        Catch exception As Exception
+            ravenClient.Capture(New SentryEvent(exception))
+        End Try
     End Sub
 
 End Class

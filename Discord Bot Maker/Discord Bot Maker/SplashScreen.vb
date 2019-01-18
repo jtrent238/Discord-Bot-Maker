@@ -1,8 +1,11 @@
-﻿Public NotInheritable Class SplashScreen
+﻿Imports SharpRaven.Data
+
+Public NotInheritable Class SplashScreen
 
     'TODO: This form can easily be set as the splash screen for the application by going to the "Application" tab
     '  of the Project Designer ("Properties" under the "Project" menu).
 
+    Dim ravenClient = DiscordBotMaker.ravenClient
 
     Private Sub SplashScreen_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'Set up the dialog text at runtime according to the application's assembly information.  
@@ -19,7 +22,11 @@
         '
         '    Version.Text = System.String.Format(Version.Text, My.Application.Info.Version.Major, My.Application.Info.Version.Minor, My.Application.Info.Version.Build, My.Application.Info.Version.Revision)
 
-        label_version.Text = My.Application.Info.Version.ToString
+        Try
+            label_version.Text = My.Application.Info.Version.ToString
+        Catch exception As Exception
+            ravenClient.Capture(New SentryEvent(exception))
+        End Try
     End Sub
 
 End Class

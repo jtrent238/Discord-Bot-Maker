@@ -1,0 +1,89 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Discord Bot Maker
+</name>
+</assembly>
+<members>
+<member name="T:Discord_Bot_Maker.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Discord_Bot_Maker.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Discord_Bot_Maker.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Discord_Bot_Maker.My.Resources.Resources.basic_bot">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:Discord_Bot_Maker.My.Resources.Resources.batch_files">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:Discord_Bot_Maker.My.Resources.Resources.botmaker_logo">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Discord_Bot_Maker.My.Resources.Resources.dbm_logo">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Discord_Bot_Maker.My.Resources.Resources.discord_logo">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Discord_Bot_Maker.My.Resources.Resources.discord_logo_spin">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Discord_Bot_Maker.My.Resources.Resources.gear_settings">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Discord_Bot_Maker.My.Resources.Resources.launch_bot">
+<summary>
+  Looks up a localized string similar to @echo off
+cls
+title Bot Console
+SET /p bot_name=
+SET /p bot_directory=
+SET bin=&quot;/bin&quot;
+SET node_executable=%bin%&quot;/node.exe&quot;
+::SET /p bot_version=
+::SET /p bot_author=
+
+cd %bot_directory%
+%bin%/node.exe
+echo %node_executable%
+node .
+</summary>
+</member>
+<member name="P:Discord_Bot_Maker.My.Resources.Resources.new_bot">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:Discord_Bot_Maker.databaseDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+</members>
+</doc>
