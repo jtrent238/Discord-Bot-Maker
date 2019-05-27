@@ -7,7 +7,7 @@ Public Class NewBot
 
     'Public NewBotDir2 = DiscordBotMaker.botdir.ToString + "\" + textbox_botname.Text.ToString
     Dim ravenClient = DiscordBotMaker.ravenClient
-
+    Dim RPTypeSelected
     Private Sub NewBot_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
 
@@ -15,6 +15,18 @@ Public Class NewBot
             ravenClient.Capture(New SentryEvent(exception))
         End Try
     End Sub
+    Private Sub RPSelected()
+        If RadioButtonRP_Playing.Enabled = True Then
+            Dim RPTypeSelected As String = "Playing"
+        End If
+        If RadioButtonRP_Streaming.Enabled = True Then
+            Dim RPTypeSelected As String = "Streaming"
+        End If
+        If RadioButtonRP_Watching.Enabled = True Then
+            Dim RPTypeSelected As String = "Watching"
+        End If
+    End Sub
+
     Private Sub button_ok_Click(sender As Object, e As EventArgs) Handles button_ok.Click
         Try
             Dim NewBot = textbox_botname.Text.ToString
@@ -41,7 +53,9 @@ Public Class NewBot
                 "BotName=" + NewBot,
                 "BotTemplate=" + combo_bottemplate.SelectedText.ToString,
                 "Author=" + textbox_author.Text.ToString,
-                "BotToken=" + BotToken_Raw ''textbox_bottoken.Text.ToString
+                "BotToken=" + BotToken_Raw, ''textbox_bottoken.Text.ToString
+                "RichPresenceType=" + RPTypeSelected.ToString +
+                "RichPresenceText=" + TextBoxRP_Text.ToString
             }
 
             Dim dependenciesBat() As String = {
@@ -129,4 +143,16 @@ Public Class NewBot
         End Try
     End Sub
 
+    Private Sub CheckBoxRP_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxRP.CheckedChanged
+        Try
+            If Me.CheckBoxRP.Checked = True Then
+                GroupBoxRP.Enabled = True
+            ElseIf Me.CheckBoxRP.Checked = False Then
+                GroupBoxRP.Enabled = False
+            End If
+
+        Catch exception As Exception
+            ravenClient.Capture(New SentryEvent(exception))
+        End Try
+    End Sub
 End Class

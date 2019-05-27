@@ -34,7 +34,14 @@ Partial Class NewBot
         Me.label_bottoken = New System.Windows.Forms.Label()
         Me.label_tokenwarning = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.GroupBoxRP = New System.Windows.Forms.GroupBox()
+        Me.CheckBoxRP = New System.Windows.Forms.CheckBox()
+        Me.RadioButtonRP_Playing = New System.Windows.Forms.RadioButton()
+        Me.RadioButtonRP_Watching = New System.Windows.Forms.RadioButton()
+        Me.RadioButtonRP_Streaming = New System.Windows.Forms.RadioButton()
+        Me.TextBoxRP_Text = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBoxRP.SuspendLayout()
         Me.SuspendLayout()
         '
         'combo_bottemplate
@@ -138,12 +145,80 @@ Partial Class NewBot
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
+        'GroupBoxRP
+        '
+        Me.GroupBoxRP.Controls.Add(Me.RadioButtonRP_Streaming)
+        Me.GroupBoxRP.Controls.Add(Me.RadioButtonRP_Watching)
+        Me.GroupBoxRP.Controls.Add(Me.RadioButtonRP_Playing)
+        Me.GroupBoxRP.Controls.Add(Me.TextBoxRP_Text)
+        Me.GroupBoxRP.Enabled = False
+        Me.GroupBoxRP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.GroupBoxRP.Location = New System.Drawing.Point(15, 202)
+        Me.GroupBoxRP.Name = "GroupBoxRP"
+        Me.GroupBoxRP.Size = New System.Drawing.Size(453, 50)
+        Me.GroupBoxRP.TabIndex = 7
+        Me.GroupBoxRP.TabStop = False
+        Me.GroupBoxRP.Text = "Ritch Presence"
+        '
+        'CheckBoxRP
+        '
+        Me.CheckBoxRP.AutoSize = True
+        Me.CheckBoxRP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.CheckBoxRP.Location = New System.Drawing.Point(15, 176)
+        Me.CheckBoxRP.Name = "CheckBoxRP"
+        Me.CheckBoxRP.Size = New System.Drawing.Size(132, 17)
+        Me.CheckBoxRP.TabIndex = 8
+        Me.CheckBoxRP.Text = "Enable Rich Presence"
+        Me.CheckBoxRP.UseVisualStyleBackColor = True
+        '
+        'RadioButtonRP_Playing
+        '
+        Me.RadioButtonRP_Playing.AutoSize = True
+        Me.RadioButtonRP_Playing.Location = New System.Drawing.Point(6, 19)
+        Me.RadioButtonRP_Playing.Name = "RadioButtonRP_Playing"
+        Me.RadioButtonRP_Playing.Size = New System.Drawing.Size(59, 17)
+        Me.RadioButtonRP_Playing.TabIndex = 9
+        Me.RadioButtonRP_Playing.TabStop = True
+        Me.RadioButtonRP_Playing.Text = "Playing"
+        Me.RadioButtonRP_Playing.UseVisualStyleBackColor = True
+        '
+        'RadioButtonRP_Watching
+        '
+        Me.RadioButtonRP_Watching.AutoSize = True
+        Me.RadioButtonRP_Watching.Location = New System.Drawing.Point(71, 19)
+        Me.RadioButtonRP_Watching.Name = "RadioButtonRP_Watching"
+        Me.RadioButtonRP_Watching.Size = New System.Drawing.Size(71, 17)
+        Me.RadioButtonRP_Watching.TabIndex = 9
+        Me.RadioButtonRP_Watching.TabStop = True
+        Me.RadioButtonRP_Watching.Text = "Watching"
+        Me.RadioButtonRP_Watching.UseVisualStyleBackColor = True
+        '
+        'RadioButtonRP_Streaming
+        '
+        Me.RadioButtonRP_Streaming.AutoSize = True
+        Me.RadioButtonRP_Streaming.Location = New System.Drawing.Point(148, 19)
+        Me.RadioButtonRP_Streaming.Name = "RadioButtonRP_Streaming"
+        Me.RadioButtonRP_Streaming.Size = New System.Drawing.Size(72, 17)
+        Me.RadioButtonRP_Streaming.TabIndex = 9
+        Me.RadioButtonRP_Streaming.TabStop = True
+        Me.RadioButtonRP_Streaming.Text = "Streaming"
+        Me.RadioButtonRP_Streaming.UseVisualStyleBackColor = True
+        '
+        'TextBoxRP_Text
+        '
+        Me.TextBoxRP_Text.Location = New System.Drawing.Point(226, 19)
+        Me.TextBoxRP_Text.Name = "TextBoxRP_Text"
+        Me.TextBoxRP_Text.Size = New System.Drawing.Size(206, 20)
+        Me.TextBoxRP_Text.TabIndex = 3
+        '
         'NewBot
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(700, 374)
+        Me.Controls.Add(Me.CheckBoxRP)
+        Me.Controls.Add(Me.GroupBoxRP)
         Me.Controls.Add(Me.textbox_bottoken)
         Me.Controls.Add(Me.label_tokenwarning)
         Me.Controls.Add(Me.label_bottoken)
@@ -159,6 +234,8 @@ Partial Class NewBot
         Me.Name = "NewBot"
         Me.Text = "NewBot"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBoxRP.ResumeLayout(False)
+        Me.GroupBoxRP.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -175,4 +252,10 @@ Partial Class NewBot
     Friend WithEvents textbox_bottoken As TextBox
     Friend WithEvents label_bottoken As Label
     Friend WithEvents label_tokenwarning As Label
+    Friend WithEvents GroupBoxRP As GroupBox
+    Friend WithEvents CheckBoxRP As CheckBox
+    Friend WithEvents RadioButtonRP_Streaming As RadioButton
+    Friend WithEvents RadioButtonRP_Watching As RadioButton
+    Friend WithEvents RadioButtonRP_Playing As RadioButton
+    Friend WithEvents TextBoxRP_Text As TextBox
 End Class

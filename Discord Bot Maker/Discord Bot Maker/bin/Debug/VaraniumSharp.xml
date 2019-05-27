@@ -1,0 +1,1098 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VaraniumSharp</name>
+    </assembly>
+    <members>
+        <member name="T:VaraniumSharp.Attributes.AutomaticConcretionContainerRegistrationAttribute">
+            <summary>
+            Used to register all classes or structs that implement a specific interface or inherits from a base class.
+            This attribute should be applied to the interface or base class that the class should be registered as in the Container
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Attributes.AutomaticConcretionContainerRegistrationAttribute.#ctor">
+            <summary>
+            Parameterless Constructor sets Reuse to default
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Attributes.AutomaticConcretionContainerRegistrationAttribute.#ctor(VaraniumSharp.Enumerations.ServiceReuse)">
+            <summary>
+            Constructor that allows setting Reuse directly
+            </summary>
+            <param name="reuse">Indicate service reuse type</param>
+        </member>
+        <member name="M:VaraniumSharp.Attributes.AutomaticConcretionContainerRegistrationAttribute.#ctor(VaraniumSharp.Enumerations.ServiceReuse,System.Boolean)">
+            <summary>
+            Constructor that allows setting Reuse directly
+            </summary>
+            <param name="reuse">Indicate service reuse type</param>
+            <param name="multipleConstructors">Indicate if the service has multiple constructors</param>
+        </member>
+        <member name="T:VaraniumSharp.Attributes.AutomaticContainerRegistrationAttribute">
+            <summary>
+            Used to set values to assist in automatically registering it with a DI container
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Attributes.AutomaticContainerRegistrationAttribute.#ctor(System.Type)">
+            <summary>
+            Construct attribute with service type and default reuse
+            </summary>
+            <param name="serviceType">The type that the service should be registered as</param>
+        </member>
+        <member name="M:VaraniumSharp.Attributes.AutomaticContainerRegistrationAttribute.#ctor(System.Type,VaraniumSharp.Enumerations.ServiceReuse)">
+            <summary>
+            Construct attribute with service type and reuse
+            </summary>
+            <param name="serviceType">The type that the service should be registered as</param>
+            <param name="reuse">Indicate reuse policy for the service</param>
+        </member>
+        <member name="M:VaraniumSharp.Attributes.AutomaticContainerRegistrationAttribute.#ctor(System.Type,VaraniumSharp.Enumerations.ServiceReuse,System.Boolean)">
+            <summary>
+            Construct attribute with service type, reuse and multiple constructor flag
+            </summary>
+            <param name="serviceType">The type that the service should be registered as</param>
+            <param name="reuse">Indicate reuse policy for the service</param>
+            <param name="multipleConstructors">Indicate if the service has multiple constructors</param>
+        </member>
+        <member name="M:VaraniumSharp.Attributes.AutomaticContainerRegistrationAttribute.#ctor(System.Type,VaraniumSharp.Enumerations.ServiceReuse,System.Boolean,System.Int32)">
+            <summary>
+            Construct attribute with service type, reuse, multiple constructor flag and a priority
+            </summary>
+            <param name="serviceType">The type that the service should be registered as</param>
+            <param name="reuse">Indicate reuse policy for the service</param>
+            <param name="multipleConstructors">Indicate if the service has multiple constructors</param>
+            <param name="priority">Priority of the class in case of multiple implementers. Higher values takes priority</param>
+        </member>
+        <member name="P:VaraniumSharp.Attributes.AutomaticContainerRegistrationAttribute.Priority">
+            <summary>
+            Injection priority of the class.
+            This value is used when there are multiple implementation of the same class with the one with the highest priority being chosen.
+            Default priority is 0
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Attributes.AutomaticContainerRegistrationAttribute.ServiceType">
+            <summary>
+            The type that the service is registered as
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Attributes.AutomaticContainerRegistrationBaseAttribute">
+            <summary>
+            Base class that can be used by attribute classes that deal with automatic container registration
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Attributes.AutomaticContainerRegistrationBaseAttribute.#ctor(VaraniumSharp.Enumerations.ServiceReuse,System.Boolean)">
+            <summary>
+            Construcor that allows setting Reuse
+            </summary>
+            <param name="reuse">Indicate reuse policy for the service</param>
+            <param name="multipleConstructors">Indicate if the service has multiple constructors</param>
+        </member>
+        <member name="P:VaraniumSharp.Attributes.AutomaticContainerRegistrationBaseAttribute.MultipleConstructors">
+            <summary>
+            Indicate if the service has multiple constructors.
+            Containers like DryIoC need this in order to be able to properly register classes that have more than one constructor.
+            <see>
+                <cref>https://bitbucket.org/dadhi/dryioc/wiki/SelectConstructorOrFactoryMethod#markdown-header-selecting-constructor-with-resolvable-parameters</cref>
+            </see>
+            <para>If the implementing container does not need it, this property can be ignored</para>
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Attributes.AutomaticContainerRegistrationBaseAttribute.Reuse">
+            <summary>
+            How the service should be setup for reuse
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Attributes.BlockingPropertyAttribute">
+            <summary>
+            Attribute used to decorate properties used by <see cref="M:VaraniumSharp.Extensions.NotifyPropertyChangedExtensions.BlockUntil(System.ComponentModel.INotifyPropertyChanged)"/>
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Attributes.BlockingPropertyAttribute.#ctor(System.Object)">
+            <summary>
+            Construct with expected value
+            </summary>
+            <param name="expectedValue">If the property changes to this value the Task will be set as completed</param>
+        </member>
+        <member name="P:VaraniumSharp.Attributes.BlockingPropertyAttribute.ExpectedValue">
+            <summary>
+            Value that is expected
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Caching.BasicMemoryCacheWrapperFactory">
+            <summary>
+            Creates and initializes instances of <see cref="T:VaraniumSharp.Interfaces.Caching.IMemoryCacheWrapper`1"/>
+            <remarks>
+            This class should not be used when Dependency Injection is used as it directly new up instances of <see cref="T:VaraniumSharp.Interfaces.Caching.IMemoryCacheWrapper`1"/> rather than resolving them from the container.
+            For a DI compatible solution look for a factory implementation in a Ring 2 library like VaraniumSharp.Initiator
+            </remarks>
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Caching.BasicMemoryCacheWrapperFactory.Create``1(System.Runtime.Caching.CacheItemPolicy,System.Func{System.String,System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Creates a new instance of the MemoryCacheWrapper and initialize it
+            </summary>
+            <typeparam name="T">Type of items that will be stored in the cache</typeparam>
+            <param name="policy">Cache eviction policy</param>
+            <param name="dataRetrievalFunc">Function used to retrieve items if they are not in the cache</param>
+            <returns>Initialized instance of MemoryCacheWrapper</returns>
+        </member>
+        <member name="M:VaraniumSharp.Caching.BasicMemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy``1(System.Func{System.String,System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Creates a new instance of the MemoryCacheWrapper and initialize it with a default cache policy.
+            The default policy uses SlidingExpiration with a duration 5 minute
+            </summary>
+            <typeparam name="T">Type of items that will be stored in the cache</typeparam>
+            <param name="dataRetrievalFunc">Function used to retrieve items if they are not in the cache</param>
+            <returns>Initialized instance of MemoryCacheWrapper</returns>
+        </member>
+        <member name="T:VaraniumSharp.Caching.MemoryCacheWrapper`1">
+            <summary>
+            Wrapper for <see cref="T:System.Runtime.Caching.MemoryCache"/> that provides an easy double-checked lock method for retrieving items from the cache
+            </summary>
+            <typeparam name="T">Type of items that will be stored in the cache</typeparam>
+        </member>
+        <member name="M:VaraniumSharp.Caching.MemoryCacheWrapper`1.#ctor">
+            <summary>
+            Parameterless Constructor
+            </summary>
+        </member>
+        <member name="E:VaraniumSharp.Caching.MemoryCacheWrapper`1.PropertyChanged">
+            <summary>Occurs when a property value changes.</summary>
+        </member>
+        <member name="P:VaraniumSharp.Caching.MemoryCacheWrapper`1.CachePolicy">
+            <summary>
+            Policy to use for cached items
+            <see>
+                <cref>
+                    https://msdn.microsoft.com/en-us/library/system.runtime.caching.cacheitempolicy(v=vs.110).aspx
+                </cref>
+            </see>
+            <exception cref="T:System.InvalidOperationException">Thrown if the policy has already been set</exception>
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Caching.MemoryCacheWrapper`1.DataRetrievalFunc">
+            <summary>
+            Func that will be used to retrieve data if it is not available in the cache
+            <exception cref="T:System.InvalidOperationException">Thrown if the Func has already been set</exception>
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Caching.MemoryCacheWrapper`1.ItemsInCache">
+            <summary>
+            The number of entries in the cache
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Caching.MemoryCacheWrapper`1.ContainsKeyAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Caching.MemoryCacheWrapper`1.GetAsync(System.String)">
+            <summary>
+            Retrieve an item from the cache
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown if CachePolicy or DataRetrievalFunc has not been set</exception>
+            <param name="key">The key under which the item is stored</param>
+            <returns>Cached copy of T</returns>
+        </member>
+        <member name="M:VaraniumSharp.Caching.MemoryCacheWrapper`1.RemoveFromCacheAsync(System.String)">
+            <summary>
+            Remove an item from the Cache
+            </summary>
+            <param name="key">The key under which the item is stored</param>
+            <returns>True if the item has been removed. False if it is not in the cache</returns>
+        </member>
+        <member name="T:VaraniumSharp.Collections.PackageManager">
+            <inheritdoc />
+            <summary>
+            Manager used to pack files into a <see cref="T:System.IO.Compression.ZipArchive" /> without compression.
+            <remark>
+            All methods in this class are Thread safe
+            </remark>
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Collections.PackageManager.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="E:VaraniumSharp.Collections.PackageManager.ScrubProgress">
+            <summary>
+            Event used to indicate scrubbing progress on a Package
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Collections.PackageManager.AutoFlush">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Collections.PackageManager.AddItemToPackageAsync(System.String,System.IO.Stream,System.String)">
+            <summary>
+            Store a data stream inside the Pacakge.
+            If the data already exists in the Package it will be overwritten.
+            </summary>
+            <param name="packagePath">Path to the Package</param>
+            <param name="data">The stream that should be stored in the Package</param>
+            <param name="storagePath">The relative path where the data should be stored inside the Package</param>
+        </member>
+        <member name="M:VaraniumSharp.Collections.PackageManager.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Collections.PackageManager.RemoveDataFromPackageAsync(System.String,System.String)">
+            <summary>
+            Remove data from a Package
+            <remark>
+            If the data does not exist in the package nothing will be done
+            </remark>
+            </summary>
+            <param name="packagePath">Path to the Package</param>
+            <param name="storagePath">The relative path where data is stored inside the Package</param>
+        </member>
+        <member name="M:VaraniumSharp.Collections.PackageManager.RetrieveDataFromPackageAsync(System.String,System.String)">
+            <summary>
+            Retrieves data from the Package.
+            </summary>
+            <param name="packagePath">Path to the Package</param>
+            <param name="storagePath">The relative path where data is stored inside the Package</param>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">Thrown if the storagePath could not be found in the package</exception>
+            <returns>MemoryStream containing the data from the Package</returns>
+        </member>
+        <member name="M:VaraniumSharp.Collections.PackageManager.ScrubStorageAsync(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Delete all data from the Package that is not contained in the list of paths to keep
+            </summary>
+            <param name="packagePath">Path to the Package</param>
+            <param name="storagePathsToKeep">List of relative paths of data in the package that should be kept</param>
+        </member>
+        <member name="M:VaraniumSharp.Collections.PackageManager.AutoFlushPackage(System.String)">
+            <summary>
+            Flush (Dispose) the <see cref="T:System.IO.Compression.ZipArchive"/> in <see cref="F:VaraniumSharp.Collections.PackageManager.PackageDictionary"/> and reconnect to it
+            to force data to be persisted to disk after an operation.
+            Flush will only occur if the pacakge is in the <see cref="F:VaraniumSharp.Collections.PackageManager.PackageDictionary"/> and <see cref="P:VaraniumSharp.Collections.PackageManager.AutoFlush"/> is set to true.
+            <remarks>
+            This method does not lock use the Semaphore from the <see cref="F:VaraniumSharp.Collections.PackageManager.LockingDictionary"/> so it must be called when the archive is already locked
+            </remarks>
+            </summary>
+            <param name="packagePath">Package path used to retrieve it from the Dictionary</param>
+        </member>
+        <member name="M:VaraniumSharp.Collections.PackageManager.Dispose(System.Boolean)">
+            <summary>
+            Handle disposal if we are disposing the class
+            </summary>
+            <param name="disposing">Indicate if disposal has already been done</param>
+        </member>
+        <member name="M:VaraniumSharp.Collections.PackageManager.RetrievePackageAsync(System.String)">
+            <summary>
+            Retrieve a Package for usage. This method will create the Package if it does not exist yet or open it if it exists
+            </summary>
+            <param name="packagePath">Path to the Package to initialize</param>
+        </member>
+        <member name="F:VaraniumSharp.Collections.PackageManager.LockingDictionary">
+            <summary>
+            Dictionary used to lock access to entries in the archive
+            </summary>
+        </member>
+        <member name="F:VaraniumSharp.Collections.PackageManager.PackageDictionary">
+            <summary>
+             Dictionary to Store package instances
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Collections.PriorityCollection`1">
+            <summary>
+                Collection that enforces and monitors priority of items that are added to the collection
+            </summary>
+            <typeparam name="T">Type of object added to the collection</typeparam>
+        </member>
+        <member name="P:VaraniumSharp.Collections.PriorityCollection`1.Count">
+            <summary>
+                Number of items in the collection
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Collections.PriorityCollection`1.IsSynchronized">
+            <summary>
+                Indicate if the collection is Synchronized (thread-safe)
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Collections.PriorityCollection`1.SyncRoot">
+            <summary>
+                Object used to synchronize access to the collection
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Collections.PriorityCollection`1.CopyTo(System.Array,System.Int32)">
+            <summary>
+                Copy the collection to an <see cref="T:System.Array" />
+            </summary>
+            <exception cref="T:System.ArgumentException">Target array is smaller than the number of items to inser</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">The index is below the lower bound of the array</exception>
+            <param name="array">Array that the collection should be copied to</param>
+            <param name="index">Index to start inserting at in the target array</param>
+        </member>
+        <member name="M:VaraniumSharp.Collections.PriorityCollection`1.CopyTo(`0[],System.Int32)">
+            <summary>
+                Copy the collection to an array
+            </summary>
+            <param name="array">The array to copy the values to</param>
+            <param name="index">The index to start inserting at</param>
+        </member>
+        <member name="M:VaraniumSharp.Collections.PriorityCollection`1.GetEnumerator">
+            <summary>
+                Get typed enumerator for the collection
+            </summary>
+            <returns>Enumerator for the collection</returns>
+        </member>
+        <member name="M:VaraniumSharp.Collections.PriorityCollection`1.ToArray">
+            <summary>
+                Convert the collection to a shallow copied array
+            </summary>
+            <returns>Array containing references to the items</returns>
+        </member>
+        <member name="M:VaraniumSharp.Collections.PriorityCollection`1.TryAdd(`0)">
+            <summary>
+                Try to add an item to the collection.
+                If the item has a null priority it will be added to the end of the collection and a priority value will be assigned
+                to it.
+            </summary>
+            <param name="item">The item to add</param>
+            <returns>True means the item has been successfully added</returns>
+        </member>
+        <member name="M:VaraniumSharp.Collections.PriorityCollection`1.TryTake(`0@)">
+            <summary>
+                Try to take an item from the collection.
+                <remarks>The item with the highest priority (lowest int value) will always be taken</remarks>
+            </summary>
+            <param name="item">Out parameter the item will be assigned to</param>
+            <returns>True if an item could be found in the array</returns>
+        </member>
+        <member name="M:VaraniumSharp.Collections.PriorityCollection`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+                Get enumerator for the collection
+            </summary>
+            <returns>Enumerator for the collection</returns>
+        </member>
+        <member name="M:VaraniumSharp.Collections.PriorityCollection`1.ItemOnPriorityChanged(System.Object,System.EventArgs)">
+            <summary>
+                Occurs when a collection item's priority has been updated which require rearrangement of the list
+            </summary>
+            <param name="sender">Item with changed priority</param>
+            <param name="args">This will be empty</param>
+        </member>
+        <member name="F:VaraniumSharp.Collections.PriorityCollection`1._items">
+            <summary>
+                Collection that is used as the base for storing items we manage
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Concurrency.DisposableSemaphoreSlim`1">
+            <summary>
+            Disposable SemaphoreSlim wrapper for use with <see cref="T:VaraniumSharp.Concurrency.SemaphoreSlimHelper`1"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:VaraniumSharp.Concurrency.DisposableSemaphoreSlim`1.#ctor(`0,System.Threading.SemaphoreSlim,System.Action{`0})">
+            <summary>
+            Construct with required values
+            </summary>
+            <param name="key">Key the Semaphore was acquired with</param>
+            <param name="semaphore">The SemaphoreSlim for the instance</param>
+            <param name="disposalAction">Action that will be invoked when the instance is disposed</param>
+        </member>
+        <member name="M:VaraniumSharp.Concurrency.DisposableSemaphoreSlim`1.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="F:VaraniumSharp.Concurrency.DisposableSemaphoreSlim`1._disposalAction">
+            <summary>
+            Action that will be invoked on disposal to notify <see cref="T:VaraniumSharp.Concurrency.SemaphoreSlimHelper`1"/> of disposal
+            </summary>
+        </member>
+        <member name="F:VaraniumSharp.Concurrency.DisposableSemaphoreSlim`1._key">
+            <summary>
+            Key the SemaphoreSlim was acquired with
+            </summary>
+        </member>
+        <member name="F:VaraniumSharp.Concurrency.DisposableSemaphoreSlim`1._semaphore">
+            <summary>
+            SemaphoreSlim for this instance
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Concurrency.SemaphoreSlimHelper`1">
+            <summary>
+            Semaphore helper that wraps regular try-finally logic into a disposable for easier usage
+            </summary>
+            <typeparam name="T">Type of key to use for the Semaphore collection</typeparam>
+        </member>
+        <member name="M:VaraniumSharp.Concurrency.SemaphoreSlimHelper`1.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Concurrency.SemaphoreSlimHelper`1.NumberOfSemaphoresIssued">
+            <summary>
+            The Number of SemaphoreSlim that are currently in the Dictionary
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Concurrency.SemaphoreSlimHelper`1.AcquireSemaphoreSlim(`0)">
+            <summary>
+            Attempt to acquire a <see cref="T:System.Threading.SemaphoreSlim"/> for a specific key.
+            If the Semaphore has already been acquired the call will block until the Semaphore is available
+            </summary>
+            <param name="key">Key for the Semaphore</param>
+            <returns>Disposable SemaphoreSlim wrapper</returns>
+        </member>
+        <member name="M:VaraniumSharp.Concurrency.SemaphoreSlimHelper`1.AcquireSemaphoreSlimAsync(`0)">
+            <summary>
+            Attempt to acquire a <see cref="T:System.Threading.SemaphoreSlim"/> for a specific key.
+            If the Semaphore has already been acquired the call will block until the Semaphore is available
+            </summary>
+            <param name="key">Key for the Semaphore</param>
+            <returns>Disposable SemaphoreSlim wrapper</returns>
+        </member>
+        <member name="M:VaraniumSharp.Concurrency.SemaphoreSlimHelper`1.DisposalAction(`0)">
+            <summary>
+            Action that is invoked when a <see cref="T:VaraniumSharp.Concurrency.DisposableSemaphoreSlim`1"/> is disposed so dictionary cleaning can be done if required
+            </summary>
+            <param name="entryKey">Key of the Semaphore to check</param>
+        </member>
+        <member name="F:VaraniumSharp.Concurrency.SemaphoreSlimHelper`1._semaphoreDictionary">
+            <summary>
+            Dictionary containing SemaphoreSlim entries
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Concurrency.StaTask">
+            <summary>
+            Helper for executing asynchronous operations on <see cref="F:System.Threading.ApartmentState.STA"/> threads
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Concurrency.StaTask.#cctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Concurrency.StaTask.Run(System.Action)">
+            <summary>
+            Queues an asynchronous action on a <see cref="F:System.Threading.ApartmentState.STA"/> thread and returns a <see cref="T:System.Threading.Tasks.Task"/> that represents that work
+            </summary>
+            <param name="action">The work to execute asynchronously</param>
+            <returns>Representation of asynchronous work</returns>
+        </member>
+        <member name="M:VaraniumSharp.Concurrency.StaTask.Run(System.Action,System.Threading.CancellationToken)">
+            <summary>
+            Queues an asynchronous action on a <see cref="F:System.Threading.ApartmentState.STA"/> thread and returns a <see cref="T:System.Threading.Tasks.Task"/> that represents that work
+            </summary>
+            <param name="action">The work to execute asynchronously</param>
+            <param name="cancellationToken">Token that can be used to cancel the execution of the action</param>
+            <returns>Representation of asynchronous work</returns>
+        </member>
+        <member name="F:VaraniumSharp.Concurrency.StaTask.Scheduler">
+            <summary>
+            StaTaskScheduler instance
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Concurrency.StaTaskScheduler">
+            <inheritdoc />
+            <summary>
+            Code to help make a Task scheduler run in STA mode
+            Code source: http://blogs.msdn.com/b/pfxteam/archive/2010/04/07/9990421.aspx
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Concurrency.StaTaskScheduler.#ctor">
+            <summary>
+            Default Constructor will create the scheduler with the same number of threads as there are available processors in the system
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Concurrency.StaTaskScheduler.#ctor(System.Int32)">
+            <summary>
+            Construct with number of threads that should be used
+            </summary>
+            <param name="numberOfThreads">The number of STA threads to create in the pool</param>
+        </member>
+        <member name="P:VaraniumSharp.Concurrency.StaTaskScheduler.Threads">
+            <summary>
+            Number of threads available in the scheduler
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Concurrency.StaTaskScheduler.GetScheduledTasks">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Concurrency.StaTaskScheduler.QueueTask(System.Threading.Tasks.Task)">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Concurrency.StaTaskScheduler.TryExecuteTaskInline(System.Threading.Tasks.Task,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="F:VaraniumSharp.Concurrency.StaTaskScheduler._tasks">
+            <summary>
+            Collection of tasks that have been scheduled
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Configuration.ReconfigurableSettingBase">
+            <summary>
+            Base for Setting classes that support cancellation of changes (automatic rollback to previous settings) as well as assist in persisting changes
+            to a datastore
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Configuration.ReconfigurableSettingBase.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="E:VaraniumSharp.Configuration.ReconfigurableSettingBase.PropertyChanged">
+            <summary>Occurs when a property value changes.</summary>
+        </member>
+        <member name="E:VaraniumSharp.Configuration.ReconfigurableSettingBase.SettingUpdated">
+            <summary>
+            Fired when properties have been updated and persisted (so they should be applied)
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Configuration.ReconfigurableSettingBase.DataCanBePersisted">
+            <summary>
+            Indicate if Setting values have changed
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Configuration.ReconfigurableSettingBase.UnsavedChanges">
+            <summary>
+            Indicate if there are unsaved changes
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Configuration.ReconfigurableSettingBase.CancelChanges">
+            <summary>
+            Cancel changes that were made to properties that have not been saved yet
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Configuration.ReconfigurableSettingBase.LoadSettingsAsync">
+            <summary>
+            Load Setting values from persistent storage
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Configuration.ReconfigurableSettingBase.PersistSettingsAsync">
+            <summary>
+            Persist Setting values
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Configuration.ReconfigurableSettingBase.AdjustNotificationProperties(System.Boolean)">
+            <summary>
+            Adjust properties that can be used to control UI
+            </summary>
+            <param name="newValue">New value for Properties</param>
+        </member>
+        <member name="M:VaraniumSharp.Configuration.ReconfigurableSettingBase.ExecuteDataLoadAsync">
+            <summary>
+            Provides logic for loading the settings from some form of permanent storage
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Configuration.ReconfigurableSettingBase.ExecuteDataPersistanceAsync">
+            <summary>
+            Provides logic for persisting the Settings to some form of permanent storage
+            </summary>
+            <returns>True - Data persistence succeeded</returns>
+        </member>
+        <member name="M:VaraniumSharp.Configuration.ReconfigurableSettingBase.GatherPropertyValues">
+            <summary>
+            Gather properties and their values
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Configuration.ReconfigurableSettingBase.InnerPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Invoked when an internal Property has changed
+            </summary>
+            <param name="sender">Invoker</param>
+            <param name="propertyChangedEventArgs">Property changed event arguments</param>
+        </member>
+        <member name="T:VaraniumSharp.DependencyInjection.AutomaticContainerRegistration">
+            <summary>
+            Assist in gathering and registering classes that require automated registration
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.DependencyInjection.AutomaticContainerRegistration.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.DependencyInjection.AutomaticContainerRegistration.ClassesToRegister">
+            <summary>
+            Contains all classes that have the AutomaticContainerRegistrationAttribute
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.DependencyInjection.AutomaticContainerRegistration.ConcretionClassesToRegister">
+            <summary>
+            Contains all classes that should be registered under a single type
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.DependencyInjection.AutomaticContainerRegistration.Resolve``1">
+            <summary>
+            Resolve a Service from the Container
+            </summary>
+            <typeparam name="TService">Service to resolve</typeparam>
+            <returns>Resolved service</returns>
+        </member>
+        <member name="M:VaraniumSharp.DependencyInjection.AutomaticContainerRegistration.ResolveMany``1">
+            <summary>
+            Resolve Services from the container via a shared interface of parent class
+            </summary>
+            <typeparam name="TService">Interface or parent class that children are registered under</typeparam>
+            <returns>Collection of children classes that inherit from the parent or implement the interface</returns>
+        </member>
+        <member name="M:VaraniumSharp.DependencyInjection.AutomaticContainerRegistration.RetrieveClassesRequiringRegistration(System.Boolean)">
+            <summary>
+            Call to retrieve classes that request Automatic registration
+            Can optionally continue with registration
+            </summary>
+            <param name="handleRegistration">Set to false to manually register class, otherwise use true</param>
+        </member>
+        <member name="M:VaraniumSharp.DependencyInjection.AutomaticContainerRegistration.RetrieveConcretionClassesRequiringRegistration(System.Boolean)">
+            <summary>
+            Call to retrieve classes that request Automatic Concretion registation
+            </summary>
+            <param name="handleRegistration">Set to false to manually register class, otherwise use true</param>
+        </member>
+        <member name="M:VaraniumSharp.DependencyInjection.AutomaticContainerRegistration.RegisterClasses">
+            <summary>
+            Register classes with Container
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.DependencyInjection.AutomaticContainerRegistration.RegisterConcretionClasses">
+            <summary>
+            Register concretion classes with Container
+            </summary>
+        </member>
+        <member name="F:VaraniumSharp.DependencyInjection.AutomaticContainerRegistration._logger">
+            <summary>
+            Logger instance
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Enumerations.ServiceReuse">
+            <summary>
+            Enumerations that indicate service reuseability
+            </summary>
+        </member>
+        <member name="F:VaraniumSharp.Enumerations.ServiceReuse.Default">
+            <summary>
+            Set up the service with default reuse
+            </summary>
+        </member>
+        <member name="F:VaraniumSharp.Enumerations.ServiceReuse.Singleton">
+            <summary>
+            Set up the service with singleton reuse
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.EventArguments.ScrubProgressArgs">
+            <summary>
+            Event arguments for Scrubbing progress
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.EventArguments.ScrubProgressArgs.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="packagePath">Path of the pacakge that is being scrubbed</param>
+            <param name="totalEntries">Total number of entries in the package</param>
+            <param name="entriesProcessed">Number of entries that has already been processed</param>
+        </member>
+        <member name="P:VaraniumSharp.EventArguments.ScrubProgressArgs.EntriesProcessed">
+            <summary>
+            The number of entries that has been processed
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.EventArguments.ScrubProgressArgs.PackagePath">
+            <summary>
+            Path of the Package that is being scrubbed
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.EventArguments.ScrubProgressArgs.PercentageCompleted">
+            <summary>
+            Percentage of entries in the package that has been processed
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.EventArguments.ScrubProgressArgs.TotalEntries">
+            <summary>
+            The original number of entries in the Package
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Extensions.HttpClientExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Net.Http.HttpClient"/>
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Extensions.HttpClientExtensions.SetBasicAuthHeader(System.Net.Http.HttpClient,System.String,System.String)">
+            <summary>
+            Set Basic Authentication header
+            </summary>
+            <param name="client">HttpClient for which the header should be set</param>
+            <param name="username">Username for authentication</param>
+            <param name="password">Password for authentication</param>
+            <returns>HttpClient</returns>
+        </member>
+        <member name="T:VaraniumSharp.Extensions.NotifyPropertyChangedExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.ComponentModel.INotifyPropertyChanged"/>
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Extensions.NotifyPropertyChangedExtensions.BlockUntil(System.ComponentModel.INotifyPropertyChanged)">
+            <summary>
+            Returns a task that can be blocked against until a specific property changes.
+            The property or properties should be marked with <see cref="T:VaraniumSharp.Attributes.BlockingPropertyAttribute"/> otherwise a completed task will be returned immediately.
+            </summary>
+            <param name="self">Class instance that contains the properties</param>
+            <returns>Task that can be awaited until the decorated properties change</returns>
+        </member>
+        <member name="M:VaraniumSharp.Extensions.NotifyPropertyChangedExtensions.GetBlockingProperties(System.ComponentModel.INotifyPropertyChanged)">
+            <summary>
+            Get properties which have the <see cref="T:VaraniumSharp.Attributes.BlockingPropertyAttribute"/>
+            </summary>
+            <param name="self">Class instance that contains the properties</param>
+            <returns>Collection of Properties that are decorated with the attribute</returns>
+        </member>
+        <member name="M:VaraniumSharp.Extensions.NotifyPropertyChangedExtensions.SelfOnPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Occurs when a property on the monitored class changes
+            </summary>
+            <param name="sender">Object that fired the notification</param>
+            <param name="propertyChangedEventArgs">Details about the event</param>
+        </member>
+        <member name="M:VaraniumSharp.Extensions.NotifyPropertyChangedExtensions.TaskCompleted(System.ComponentModel.INotifyPropertyChanged,System.Threading.Tasks.TaskCompletionSource{System.Boolean}@)">
+            <summary>
+            Check if the task has been completed
+            </summary>
+            <param name="self">Class instance that contains the properties</param>
+            <param name="completionSource">Completion source that was used to create the monitored task</param>
+            <returns>True - Task completed, otherwise false</returns>
+        </member>
+        <member name="T:VaraniumSharp.Extensions.ObservableCollectionExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Extensions.ObservableCollectionExtensions.Clear``1(System.Collections.ObjectModel.ObservableCollection{``0},System.Action{System.Collections.ObjectModel.ObservableCollection{``0}})">
+            <summary>
+            Execution an action against the collection before clearing it.
+            <remarks>
+            This method allows doing something like unhooking event handlers from items contained in the collection before the collection is cleared.
+            <seealso>
+                <cref>http://stackoverflow.com/questions/224155/when-clearing-an-observablecollection-there-are-no-items-in-e-olditems/42713996#42713996</cref>
+            </seealso>
+            </remarks>
+            </summary>
+            <typeparam name="T">Type of item contained in the collection</typeparam>
+            <param name="collection">Observable collection that should be cleared</param>
+            <param name="unhookAction">Action that should be executed before the collection is cleared</param>
+        </member>
+        <member name="T:VaraniumSharp.Extensions.StringExtensions">
+            <summary>
+            Extension methods for strings
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Extensions.StringExtensions.#cctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Extensions.StringExtensions.ConfigurationLocation">
+            <summary>
+            The location of the assembly of the configuration file that should be loaded.
+            Defaults to the EntryAssembly's configuration file similar to the static <see cref="T:System.Configuration.ConfigurationManager"/>
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Extensions.StringExtensions.GetConfigurationValue``1(System.String)">
+            <summary>
+            Read a value from App.config and return it as the specified type
+            </summary>
+            <typeparam name="T">Type of the value that is to be retrieved</typeparam>
+            <param name="key">Key for which the value should be retrieved</param>
+            <returns>Value from App.config that is associated with the key</returns>
+        </member>
+        <member name="T:VaraniumSharp.Extensions.UrlBuilderExtensions">
+            <summary>
+            Assists in the building of Urls
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Extensions.UrlBuilderExtensions.AppendQueryString(System.String,System.Collections.Generic.KeyValuePair{System.String,System.String}[])">
+            <summary>
+            Append a query string to the Url.
+            <example>
+            Passing in `http://test.com` with a keyvalue pair containing the key `user` and the value `testUser` will produce
+            `http://test.com?user=testUser
+            </example>
+            </summary>
+            <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">If the base path already contain a query string we cannot append another one to it</exception>
+            <param name="basePath">The base url to which the query string should be appended</param>
+            <param name="queryStringParameters">Parameters for the query string</param>
+            <returns></returns>
+        </member>
+        <member name="M:VaraniumSharp.Extensions.UrlBuilderExtensions.BuildPath(System.String,System.String[])">
+            <summary>
+            Build a path for the Url.
+            <example>
+            Passing in `http://test.com` with `hello` and `world` as parameters will produce
+            `http://test.com/hello/world`
+            </example>
+            </summary>
+            <param name="base">The base to which the path should be appended</param>
+            <param name="pathElements">The elements to append to the path</param>
+            <returns></returns>
+        </member>
+        <member name="T:VaraniumSharp.GenericHelpers.StaticMethodWrapper">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.GenericHelpers.StaticMethodWrapper.StartProcess(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:VaraniumSharp.Interfaces.Caching.IMemoryCacheWrapper`1">
+            <summary>
+            Provides a wrapper around <see cref="T:System.Runtime.Caching.MemoryCache"/> that provides an easy way to get and remove items from the cache
+            </summary>
+            <typeparam name="T">Type of items that will be stored in the cache</typeparam>
+        </member>
+        <member name="P:VaraniumSharp.Interfaces.Caching.IMemoryCacheWrapper`1.CachePolicy">
+            <summary>
+            Policy to use for cached items
+            <see>
+                <cref>
+                    https://msdn.microsoft.com/en-us/library/system.runtime.caching.cacheitempolicy(v=vs.110).aspx
+                </cref>
+            </see>
+            <exception cref="T:System.InvalidOperationException">Thrown if the policy has already been set</exception>
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Interfaces.Caching.IMemoryCacheWrapper`1.DataRetrievalFunc">
+            <summary>
+            Func that will be used to retrieve data if it is not available in the cache
+            <exception cref="T:System.InvalidOperationException">Thrown if the Func has already been set</exception>
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Interfaces.Caching.IMemoryCacheWrapper`1.ContainsKeyAsync(System.String)">
+            <summary>
+            Check if an item with a specific key is currently in the cache
+            </summary>
+            <param name="key">The key under which the item is stored</param>
+            <returns>True - Item is currently cache, otherwise false</returns>
+        </member>
+        <member name="M:VaraniumSharp.Interfaces.Caching.IMemoryCacheWrapper`1.GetAsync(System.String)">
+            <summary>
+            Retrieve an item from the cache
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown if CachePolicy or DataRetrievalFunc has not been set</exception>
+            <param name="key">The key under which the item is stored</param>
+            <returns>Cached copy of T</returns>
+        </member>
+        <member name="M:VaraniumSharp.Interfaces.Caching.IMemoryCacheWrapper`1.RemoveFromCacheAsync(System.String)">
+            <summary>
+            Remove an item from the Cache
+            </summary>
+            <param name="key">The key under which the item is stored</param>
+            <returns>True if the item has been removed. False if it is not in the cache</returns>
+        </member>
+        <member name="T:VaraniumSharp.Interfaces.Caching.IMemoryCacheWrapperFactory">
+            <summary>
+            Creates and initializes instances of <see cref="T:VaraniumSharp.Interfaces.Caching.IMemoryCacheWrapper`1"/>
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Interfaces.Caching.IMemoryCacheWrapperFactory.Create``1(System.Runtime.Caching.CacheItemPolicy,System.Func{System.String,System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Creates a new instance of the MemoryCacheWrapper and initialize it
+            </summary>
+            <typeparam name="T">Type of items that will be stored in the cache</typeparam>
+            <param name="policy">Cache eviction policy</param>
+            <param name="dataRetrievalFunc">Function used to retrieve items if they are not in the cache</param>
+            <returns>Initialized instance of MemoryCacheWrapper</returns>
+        </member>
+        <member name="M:VaraniumSharp.Interfaces.Caching.IMemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy``1(System.Func{System.String,System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Creates a new instance of the MemoryCacheWrapper and initialize it with a default cache policy.
+            The default policy uses SlidingExpiration with a duration 5 minute
+            </summary>
+            <typeparam name="T">Type of items that will be stored in the cache</typeparam>
+            <param name="dataRetrievalFunc">Function used to retrieve items if they are not in the cache</param>
+            <returns>Initialized instance of MemoryCacheWrapper</returns>
+        </member>
+        <member name="T:VaraniumSharp.Interfaces.Collections.IPackageManager">
+            <summary>
+            Manager used to pack files into a <see cref="T:System.IO.Compression.ZipArchive"/> without compression.
+            <remark>
+            All methods in this class are Thread safe
+            </remark>
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Interfaces.Collections.IPackageManager.AutoFlush">
+            <summary>
+            Gets or Sets if the PackageManager should automatically dispose and recreate the connection to the <see cref="T:System.IO.Compression.ZipArchive"/>
+            to prevent data only being written to disk on Disposal
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Interfaces.Collections.IPackageManager.AddItemToPackageAsync(System.String,System.IO.Stream,System.String)">
+            <summary>
+            Store a data stream inside the Pacakge.
+            If the data already exists in the Package it will be overwritten.
+            </summary>
+            <param name="packagePath">Path to the Package</param>
+            <param name="data">The stream that should be stored in the Package</param>
+            <param name="storagePath">The relative path where the data should be stored inside the Package</param>
+        </member>
+        <member name="M:VaraniumSharp.Interfaces.Collections.IPackageManager.RemoveDataFromPackageAsync(System.String,System.String)">
+            <summary>
+            Remove data from a Package
+            <remark>
+            If the data does not exist in the package nothing will be done
+            </remark>
+            </summary>
+            <param name="packagePath">Path to the Package</param>
+            <param name="storagePath">The relative path where data is stored inside the Package</param>
+        </member>
+        <member name="M:VaraniumSharp.Interfaces.Collections.IPackageManager.RetrieveDataFromPackageAsync(System.String,System.String)">
+            <summary>
+            Retrieves data from the Package.
+            </summary>
+            <param name="packagePath">Path to the Package</param>
+            <param name="storagePath">The relative path where data is stored inside the Package</param>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">Thrown if the storagePath could not be found in the package</exception>
+            <returns>MemoryStream containing the data from the Package</returns>
+        </member>
+        <member name="M:VaraniumSharp.Interfaces.Collections.IPackageManager.ScrubStorageAsync(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Delete all data from the Package that is not contained in the list of paths to keep
+            </summary>
+            <param name="packagePath">Path to the Package</param>
+            <param name="storagePathsToKeep">List of relative paths of data in the package that should be kept</param>
+        </member>
+        <member name="T:VaraniumSharp.Interfaces.Collections.IPriorityItem">
+            <summary>
+                Interface for items that are sorted by <see cref="T:VaraniumSharp.Collections.PriorityCollection`1" />
+            </summary>
+        </member>
+        <member name="E:VaraniumSharp.Interfaces.Collections.IPriorityItem.PriorityChanged">
+            <summary>
+                Fired when the Priority values changes so that the collection can rearrange the items
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Interfaces.Collections.IPriorityItem.Priority">
+            <summary>
+                Priority of the item to add.
+                Leaving this null will automatically set the priority and add the item to the end of the collection
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Interfaces.GenericHelpers.IStaticMethodWrapper">
+            <summary>
+            Wrapper for static methods that are difficult to use in Unit testing.
+            An example would be <see cref="M:System.Diagnostics.Process.Start"/>
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Interfaces.GenericHelpers.IStaticMethodWrapper.StartProcess(System.String)">
+            <summary>
+            Invoke <see cref="M:System.Diagnostics.Process.Start"/> for a filename.
+            This method can also be invoked with a Url to start launch it in the default browser
+            </summary>
+            <param name="filename">Name of the file to open or Url to launch</param>
+        </member>
+        <member name="T:VaraniumSharp.Interfaces.Wrappers.IHttpClient">
+            <summary>
+            Wrapper for <see cref="T:System.Net.Http.HttpClient"/> to make it injectable
+            <remarks>
+            The wrapper currently only covers GetAsync and GetStreamAsync method. If a method is required create a ticket or submit a pull request
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Interfaces.Wrappers.IHttpClient.BaseAddress">
+            <summary>
+            Gets or sets the base address used when sending requests
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Interfaces.Wrappers.IHttpClient.DefaultRequestHeaders">
+            <summary>
+            Gets the headers that should be sent with each request
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Interfaces.Wrappers.IHttpClient.MaxResponseContentBufferSize">
+            <summary>
+            Gets or sets the maximum number of bytes to buffer when reading the response content
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Interfaces.Wrappers.IHttpClient.Timeout">
+            <summary>
+            Gets or sets the length of time before the request times out
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Interfaces.Wrappers.IHttpClient.CancelPendingRequests">
+            <summary>
+            Cancel all pending requests on the instance
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Interfaces.Wrappers.IHttpClient.GetAsync(System.Uri)">
+            <summary>
+            Sends a GET request to the specified URI as an async operation
+            </summary>
+            <param name="requestUri">The URI the request is sent to</param>
+            <returns>The response received from the endpoint</returns>
+        </member>
+        <member name="M:VaraniumSharp.Interfaces.Wrappers.IHttpClient.GetAsync(System.Uri,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GET request to the specified URI with a cancellation token as an async operation
+            </summary>
+            <param name="requestUri">The URI the request is sent to</param>
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of a cancellation</param>
+            <returns>The response received from the endpoint</returns>
+        </member>
+        <member name="M:VaraniumSharp.Interfaces.Wrappers.IHttpClient.GetStreamAsync(System.Uri)">
+            <summary>
+            Sends a GET request to the specified URI and return the response body as a stream in an async operation
+            </summary>
+            <param name="requestUri">The URI the request is sent to</param>
+            <returns>Stream containing the response body</returns>
+        </member>
+        <member name="T:VaraniumSharp.Logging.StaticLogger">
+            <summary>
+            Static helper that is used by VaraniumSharp to access the <see cref="P:VaraniumSharp.Logging.StaticLogger.LoggerFactory"/> instance.
+            This class allows for easy configuration and usage of the factory by implementers.
+            To have the factory log to your provider simply use <code>LoggerFactory.AddProvider()</code> to add your provider, unless your provider has helper classes in which case those can be used
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Logging.StaticLogger.#cctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Logging.StaticLogger.LoggerFactory">
+            <summary>
+            The factory that is used to create Logger instances for Logging in VaraniumSharp
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Logging.StaticLogger.GetLogger``1">
+            <summary>
+            Create an ILogger instance for the specified type
+            </summary>
+            <typeparam name="T">Type of class that the logger instance is for</typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:VaraniumSharp.Wrappers.HttpClientWrapper">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Wrappers.HttpClientWrapper.#ctor">
+            <summary>
+            DI Constructor
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Wrappers.HttpClientWrapper.BaseAddress">
+            <inheritdoc />
+        </member>
+        <member name="P:VaraniumSharp.Wrappers.HttpClientWrapper.DefaultRequestHeaders">
+            <inheritdoc />
+        </member>
+        <member name="P:VaraniumSharp.Wrappers.HttpClientWrapper.MaxResponseContentBufferSize">
+            <inheritdoc />
+        </member>
+        <member name="P:VaraniumSharp.Wrappers.HttpClientWrapper.Timeout">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Wrappers.HttpClientWrapper.CancelPendingRequests">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Wrappers.HttpClientWrapper.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Wrappers.HttpClientWrapper.GetAsync(System.Uri)">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Wrappers.HttpClientWrapper.GetAsync(System.Uri,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Wrappers.HttpClientWrapper.GetStreamAsync(System.Uri)">
+            <inheritdoc />
+        </member>
+        <member name="F:VaraniumSharp.Wrappers.HttpClientWrapper._httpClient">
+            <summary>
+            HttpClient instance
+            </summary>
+        </member>
+    </members>
+</doc>

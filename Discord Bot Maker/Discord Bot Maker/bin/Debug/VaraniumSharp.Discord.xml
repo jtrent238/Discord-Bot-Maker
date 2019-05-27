@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VaraniumSharp.Discord</name>
+    </assembly>
+    <members>
+        <member name="T:VaraniumSharp.Discord.DiscordBot">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Discord.DiscordBot.#ctor(VaraniumSharp.Discord.Interfaces.IDiscordSocketClientWrapper,VaraniumSharp.Discord.Interfaces.ICommandServiceWrapper,System.IServiceProvider)">
+            <summary>
+            DI Constructor
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Discord.DiscordBot.StartAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Discord.DiscordBot.StartAsync(System.Reflection.Assembly)">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Discord.DiscordBot.StopAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Discord.DiscordBot.DiscordSocketClientOnLog(System.Object,Discord.LogMessage)">
+            <summary>
+            Occurs when <see cref="F:VaraniumSharp.Discord.DiscordBot._discordSocketClient"/> sends a log event
+            </summary>
+            <param name="sender">Sender of the event</param>
+            <param name="logMessage">The message to log</param>
+        </member>
+        <member name="M:VaraniumSharp.Discord.DiscordBot.DiscordSocketClientOnMessageReceived(System.Object,VaraniumSharp.Discord.Interfaces.ISocketMessageWrapper)">
+            <summary>
+            Occurs when the <see cref="F:VaraniumSharp.Discord.DiscordBot._discordSocketClient"/> receives a message
+            </summary>
+            <param name="sender">Sender of the event</param>
+            <param name="socketMessage">Message received from the socket</param>
+        </member>
+        <member name="M:VaraniumSharp.Discord.DiscordBot.InstallModulesAsync(System.Reflection.Assembly)">
+            <summary>
+            Install modules for <see cref="F:VaraniumSharp.Discord.DiscordBot._commandService"/>
+            </summary>
+            <param name="assemblyContainingCommands">Assembly where bot commands are located</param>
+        </member>
+        <member name="F:VaraniumSharp.Discord.DiscordBot._commandService">
+            <summary>
+            CommandService instance
+            </summary>
+        </member>
+        <member name="F:VaraniumSharp.Discord.DiscordBot._discordSocketClient">
+            <summary>
+            DiscordSocketClient instance
+            </summary>
+        </member>
+        <member name="F:VaraniumSharp.Discord.DiscordBot._logger">
+            <summary>
+            Logger instance
+            </summary>
+        </member>
+        <member name="F:VaraniumSharp.Discord.DiscordBot._moduleLock">
+            <summary>
+            Semaphore used to lock module installation method to prevent multiple executions
+            </summary>
+        </member>
+        <member name="F:VaraniumSharp.Discord.DiscordBot._serviceProvider">
+            <summary>
+            ServiceProvider instance
+            </summary>
+        </member>
+        <member name="F:VaraniumSharp.Discord.DiscordBot._modulesRegistered">
+            <summary>
+            Indicate if modules are already registered with the <see cref="F:VaraniumSharp.Discord.DiscordBot._commandService"/>
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Discord.DiscordBotConfig">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Discord.DiscordBotConfig.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Discord.DiscordBotConfig.AcceptedCharPrefix">
+            <inheritdoc />
+        </member>
+        <member name="P:VaraniumSharp.Discord.DiscordBotConfig.AcceptedStringPrefix">
+            <inheritdoc />
+        </member>
+        <member name="P:VaraniumSharp.Discord.DiscordBotConfig.Token">
+            <inheritdoc />
+        </member>
+        <member name="P:VaraniumSharp.Discord.DiscordBotConfig.TokenType">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Discord.DiscordBotConfig.ConfigureBot(System.String,Discord.TokenType)">
+            <summary>
+            Set the configuration values
+            </summary>
+            <param name="token">Token value to use</param>
+            <param name="tokenType">Type of token</param>
+        </member>
+        <member name="T:VaraniumSharp.Discord.Interfaces.ICommandServiceWrapper">
+            <summary>
+            Wrapper for <see cref="P:VaraniumSharp.Discord.Interfaces.ICommandServiceWrapper.CommandService"/>
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Discord.Interfaces.ICommandServiceWrapper.CommandService">
+            <summary>
+            Wrapped instance
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Discord.Interfaces.ICommandServiceWrapper.AddModulesAsync(System.Reflection.Assembly)">
+            <summary>
+            Add modules containing the command
+            </summary>
+            <param name="assembly">Assembly where command should be retrieved from</param>
+        </member>
+        <member name="M:VaraniumSharp.Discord.Interfaces.ICommandServiceWrapper.ExecuteAsync(Discord.Commands.ICommandContext,System.Int32,System.IServiceProvider,Discord.Commands.MultiMatchHandling)">
+            <summary>
+            Executes a command
+            </summary>
+            <param name="context">Command context</param>
+            <param name="argPos">Argument position</param>
+            <param name="services">Service container</param>
+            <param name="multiMatchHandling">How multiple matches should be handled</param>
+            <returns>Result of the execution</returns>
+        </member>
+        <member name="T:VaraniumSharp.Discord.Interfaces.IDiscordBot">
+            <summary>
+            Basic <see cref="T:Discord.WebSocket.DiscordSocketClient"/> wrapper that sets up all basic logic needed to create and operate a Discord bot
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Discord.Interfaces.IDiscordBot.StartAsync">
+            <summary>
+            Start the Discord client
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Discord.Interfaces.IDiscordBot.StartAsync(System.Reflection.Assembly)">
+            <summary>
+            Start the bot and install commands from the specified assembly if the commands have not been installed already
+            </summary>
+            <param name="assembly">Assembly where the commands are located. Pass null to use the executing Assembly</param>
+        </member>
+        <member name="M:VaraniumSharp.Discord.Interfaces.IDiscordBot.StopAsync">
+            <summary>
+            Stop the Discord client
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Discord.Interfaces.IDiscordBotConfig">
+            <summary>
+            Configuration for DiscordBot
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Discord.Interfaces.IDiscordBotConfig.AcceptedCharPrefix">
+            <summary>
+            Collection of character prefixes the bot looks for in messages (Set to \0 to ignore)
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Discord.Interfaces.IDiscordBotConfig.AcceptedStringPrefix">
+            <summary>
+            Collection of string prefixes the bot looks for in messages
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Discord.Interfaces.IDiscordBotConfig.Token">
+            <summary>
+            Token for the Discord API
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Discord.Interfaces.IDiscordBotConfig.TokenType">
+            <summary>
+            Type of token to use for login
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Discord.Interfaces.IDiscordSocketClientWrapper">
+            <summary>
+            Wrapper for <see cref="P:VaraniumSharp.Discord.Interfaces.IDiscordSocketClientWrapper.DiscordSocketClient"/> making it possible to create interfaces for testing
+            </summary>
+        </member>
+        <member name="E:VaraniumSharp.Discord.Interfaces.IDiscordSocketClientWrapper.Log">
+            <summary>
+            Fired when Discord has sent a log message
+            </summary>
+        </member>
+        <member name="E:VaraniumSharp.Discord.Interfaces.IDiscordSocketClientWrapper.MessageReceived">
+            <summary>
+            Fired when a message was received from Discord
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Discord.Interfaces.IDiscordSocketClientWrapper.CurrentUser">
+            <summary>
+            The current user
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Discord.Interfaces.IDiscordSocketClientWrapper.DiscordSocketClient">
+            <summary>
+            DiscordSocketClient instance
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Discord.Interfaces.IDiscordSocketClientWrapper.LoginAsync">
+            <summary>
+            Logs the bot into Discord
+            <remarks>
+            While the <see cref="P:VaraniumSharp.Discord.Wrappers.DiscordSocketClientWrapper.DiscordSocketClient"/> provides parameters the wrapper uses the settings in <see cref="T:VaraniumSharp.Discord.Interfaces.IDiscordBotConfig"/> to handle login
+            </remarks>
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Discord.Interfaces.IDiscordSocketClientWrapper.StartAsync">
+            <summary>
+            Start the bot
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Discord.Interfaces.IDiscordSocketClientWrapper.StopAsync">
+            <summary>
+            Stop the bot
+            </summary>
+        </member>
+        <member name="T:VaraniumSharp.Discord.Interfaces.ISocketMessageWrapper">
+            <summary>
+            Wrapper for <see cref="P:VaraniumSharp.Discord.Interfaces.ISocketMessageWrapper.SocketMessage"/>
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Discord.Interfaces.ISocketMessageWrapper.SocketMessage">
+            <summary>
+            Socket Message
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Discord.Interfaces.ISocketMessageWrapper.GetCommandContextForUserMessage(VaraniumSharp.Discord.Interfaces.IDiscordSocketClientWrapper,System.Int32@)">
+            <summary>
+            Return a <see cref="T:Discord.Commands.SocketCommandContext"/> for the SocketMessage
+            </summary>
+            <param name="discordSocketClient">DiscordClient for which the context should be returned</param>
+            <param name="argPos">Argument position</param>
+            <returns>The context unless the message is not a <see cref="T:Discord.WebSocket.SocketUserMessage"/> or it has a user mention or '!' prefix in which case null</returns>
+        </member>
+        <member name="T:VaraniumSharp.Discord.Wrappers.CommandServiceWrapper">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Discord.Wrappers.CommandServiceWrapper.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Discord.Wrappers.CommandServiceWrapper.CommandService">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Discord.Wrappers.CommandServiceWrapper.AddModulesAsync(System.Reflection.Assembly)">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Discord.Wrappers.CommandServiceWrapper.ExecuteAsync(Discord.Commands.ICommandContext,System.Int32,System.IServiceProvider,Discord.Commands.MultiMatchHandling)">
+            <inheritdoc />
+        </member>
+        <member name="T:VaraniumSharp.Discord.Wrappers.DiscordSocketClientWrapper">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Discord.Wrappers.DiscordSocketClientWrapper.#ctor(VaraniumSharp.Discord.Interfaces.IDiscordBotConfig)">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="E:VaraniumSharp.Discord.Wrappers.DiscordSocketClientWrapper.Log">
+            <inheritdoc />
+        </member>
+        <member name="E:VaraniumSharp.Discord.Wrappers.DiscordSocketClientWrapper.MessageReceived">
+            <inheritdoc />
+        </member>
+        <member name="P:VaraniumSharp.Discord.Wrappers.DiscordSocketClientWrapper.CurrentUser">
+            <inheritdoc />
+        </member>
+        <member name="P:VaraniumSharp.Discord.Wrappers.DiscordSocketClientWrapper.DiscordSocketClient">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Discord.Wrappers.DiscordSocketClientWrapper.LoginAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Discord.Wrappers.DiscordSocketClientWrapper.StartAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Discord.Wrappers.DiscordSocketClientWrapper.StopAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Discord.Wrappers.DiscordSocketClientWrapper.DiscordSocketClientOnLog(Discord.LogMessage)">
+            <summary>
+            Occurs when Discord sent a log message
+            </summary>
+            <param name="arg">The message to log</param>
+        </member>
+        <member name="M:VaraniumSharp.Discord.Wrappers.DiscordSocketClientWrapper.DiscordSocketClientOnMessageReceived(Discord.WebSocket.SocketMessage)">
+            <summary>
+            Occurs when a message was received from Discord
+            </summary>
+            <param name="arg">Received message</param>
+        </member>
+        <member name="F:VaraniumSharp.Discord.Wrappers.DiscordSocketClientWrapper._botConfig">
+            <summary>
+            BotConfig instance
+            </summary>
+        </member>
+        <member name="M:VaraniumSharp.Discord.Wrappers.SocketMessageWrapper.#ctor(VaraniumSharp.Discord.Interfaces.IDiscordBotConfig)">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:VaraniumSharp.Discord.Wrappers.SocketMessageWrapper.SocketMessage">
+            <inheritdoc />
+        </member>
+        <member name="M:VaraniumSharp.Discord.Wrappers.SocketMessageWrapper.GetCommandContextForUserMessage(VaraniumSharp.Discord.Interfaces.IDiscordSocketClientWrapper,System.Int32@)">
+            <inheritdoc />
+        </member>
+        <member name="F:VaraniumSharp.Discord.Wrappers.SocketMessageWrapper._botConfig">
+            <summary>
+            BotConfig instance
+            </summary>
+        </member>
+    </members>
+</doc>

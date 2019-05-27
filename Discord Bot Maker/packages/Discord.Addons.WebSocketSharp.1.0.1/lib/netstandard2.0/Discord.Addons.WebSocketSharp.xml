@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Discord.Addons.WebSocketSharp</name>
+    </assembly>
+    <members>
+        <member name="T:Discord.Addons.WebSocketSharp.WebSocketSharpClient">
+            <summary>
+            WebSocket provider using websocket-sharp.
+            </summary>
+        </member>
+        <member name="E:Discord.Addons.WebSocketSharp.WebSocketSharpClient.BinaryMessage">
+            <inheritdoc />
+        </member>
+        <member name="E:Discord.Addons.WebSocketSharp.WebSocketSharpClient.TextMessage">
+            <inheritdoc />
+        </member>
+        <member name="E:Discord.Addons.WebSocketSharp.WebSocketSharpClient.Closed">
+            <inheritdoc />
+        </member>
+        <member name="M:Discord.Addons.WebSocketSharp.WebSocketSharpClient.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Discord.Addons.WebSocketSharp.WebSocketSharpClient"/> class.
+            </summary>
+        </member>
+        <member name="M:Discord.Addons.WebSocketSharp.WebSocketSharpClient.SetHeader(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Discord.Addons.WebSocketSharp.WebSocketSharpClient.SetCancelToken(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Discord.Addons.WebSocketSharp.WebSocketSharpClient.ConnectAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Discord.Addons.WebSocketSharp.WebSocketSharpClient.DisconnectAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Discord.Addons.WebSocketSharp.WebSocketSharpClient.SendAsync(System.Byte[],System.Int32,System.Int32,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Discord.Addons.WebSocketSharp.WebSocketSharpClient.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Discord.Addons.WebSocketSharp.WebSocketSharpProvider">
+            <summary>
+            Provides access to an instance of the <see cref="T:Discord.Addons.WebSocketSharp.WebSocketSharpClient"/> class.
+            </summary>
+        </member>
+        <member name="F:Discord.Addons.WebSocketSharp.WebSocketSharpProvider.Instance">
+            <summary>
+            Gets an instance of the <see cref="T:Discord.Addons.WebSocketSharp.WebSocketSharpClient"/> class.
+            </summary>
+        </member>
+    </members>
+</doc>
