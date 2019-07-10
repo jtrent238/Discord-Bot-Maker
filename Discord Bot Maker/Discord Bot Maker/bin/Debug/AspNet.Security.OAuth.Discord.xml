@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNet.Security.OAuth.Discord</name>
+    </assembly>
+    <members>
+        <member name="T:AspNet.Security.OAuth.Discord.DiscordAuthenticationDefaults">
+            <summary>
+            Default values used by the Discord authentication middleware.
+            </summary>
+        </member>
+        <member name="F:AspNet.Security.OAuth.Discord.DiscordAuthenticationDefaults.AuthenticationScheme">
+            <summary>
+            Default value for <see cref="P:Microsoft.AspNetCore.Authentication.AuthenticationScheme.Name"/>.
+            </summary>
+        </member>
+        <member name="F:AspNet.Security.OAuth.Discord.DiscordAuthenticationDefaults.DisplayName">
+            <summary>
+            Default value for <see cref="P:Microsoft.AspNetCore.Authentication.AuthenticationScheme.DisplayName"/>.
+            </summary>
+        </member>
+        <member name="F:AspNet.Security.OAuth.Discord.DiscordAuthenticationDefaults.Issuer">
+            <summary>
+            Default value for <see cref="P:Microsoft.AspNetCore.Authentication.AuthenticationSchemeOptions.ClaimsIssuer"/>.
+            </summary>
+        </member>
+        <member name="F:AspNet.Security.OAuth.Discord.DiscordAuthenticationDefaults.CallbackPath">
+            <summary>
+            Default value for <see cref="P:Microsoft.AspNetCore.Authentication.RemoteAuthenticationOptions.CallbackPath"/>.
+            </summary>
+        </member>
+        <member name="F:AspNet.Security.OAuth.Discord.DiscordAuthenticationDefaults.AuthorizationEndpoint">
+            <summary>
+            Default value for <see cref="P:Microsoft.AspNetCore.Authentication.OAuth.OAuthOptions.AuthorizationEndpoint"/>.
+            </summary>
+        </member>
+        <member name="F:AspNet.Security.OAuth.Discord.DiscordAuthenticationDefaults.TokenEndpoint">
+            <summary>
+            Default value for <see cref="P:Microsoft.AspNetCore.Authentication.OAuth.OAuthOptions.TokenEndpoint"/>.
+            </summary>
+        </member>
+        <member name="F:AspNet.Security.OAuth.Discord.DiscordAuthenticationDefaults.UserInformationEndpoint">
+            <summary>
+            Default value for <see cref="P:Microsoft.AspNetCore.Authentication.OAuth.OAuthOptions.UserInformationEndpoint"/>.
+            </summary>
+        </member>
+        <member name="T:AspNet.Security.OAuth.Discord.DiscordAuthenticationOptions">
+            <summary>
+            Defines a set of options used by <see cref="T:AspNet.Security.OAuth.Discord.DiscordAuthenticationHandler"/>.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.DiscordAuthenticationExtensions">
+            <summary>
+            Extension methods to add Discord authentication capabilities to an HTTP application pipeline.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.DiscordAuthenticationExtensions.AddDiscord(Microsoft.AspNetCore.Authentication.AuthenticationBuilder)">
+            <summary>
+            Adds <see cref="T:AspNet.Security.OAuth.Discord.DiscordAuthenticationHandler"/> to the specified
+            <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationBuilder"/>, which enables Discord authentication capabilities.
+            </summary>
+            <param name="builder">The authentication builder.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.DiscordAuthenticationExtensions.AddDiscord(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,System.Action{AspNet.Security.OAuth.Discord.DiscordAuthenticationOptions})">
+            <summary>
+            Adds <see cref="T:AspNet.Security.OAuth.Discord.DiscordAuthenticationHandler"/> to the specified
+            <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationBuilder"/>, which enables Discord authentication capabilities.
+            </summary>
+            <param name="builder">The authentication builder.</param>
+            <param name="configuration">The delegate used to configure the OpenID 2.0 options.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.DiscordAuthenticationExtensions.AddDiscord(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,System.String,System.Action{AspNet.Security.OAuth.Discord.DiscordAuthenticationOptions})">
+            <summary>
+            Adds <see cref="T:AspNet.Security.OAuth.Discord.DiscordAuthenticationHandler"/> to the specified
+            <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationBuilder"/>, which enables Discord authentication capabilities.
+            </summary>
+            <param name="builder">The authentication builder.</param>
+            <param name="scheme">The authentication scheme associated with this instance.</param>
+            <param name="configuration">The delegate used to configure the Discord options.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.DiscordAuthenticationExtensions.AddDiscord(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,System.String,System.String,System.Action{AspNet.Security.OAuth.Discord.DiscordAuthenticationOptions})">
+            <summary>
+            Adds <see cref="T:AspNet.Security.OAuth.Discord.DiscordAuthenticationHandler"/> to the specified
+            <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationBuilder"/>, which enables Discord authentication capabilities.
+            </summary>
+            <param name="builder">The authentication builder.</param>
+            <param name="scheme">The authentication scheme associated with this instance.</param>
+            <param name="caption">The optional display name associated with this instance.</param>
+            <param name="configuration">The delegate used to configure the Discord options.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationBuilder"/>.</returns>
+        </member>
+    </members>
+</doc>

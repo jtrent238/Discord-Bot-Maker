@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNet.Security.OAuth.GitHub</name>
+    </assembly>
+    <members>
+        <member name="T:AspNet.Security.OAuth.GitHub.GitHubAuthenticationConstants">
+            <summary>
+            Contains constants specific to the <see cref="T:AspNet.Security.OAuth.GitHub.GitHubAuthenticationHandler"/>.
+            </summary>
+        </member>
+        <member name="T:AspNet.Security.OAuth.GitHub.GitHubAuthenticationDefaults">
+            <summary>
+            Default values used by the GitHub authentication middleware.
+            </summary>
+        </member>
+        <member name="F:AspNet.Security.OAuth.GitHub.GitHubAuthenticationDefaults.AuthenticationScheme">
+            <summary>
+            Default value for <see cref="P:Microsoft.AspNetCore.Authentication.AuthenticationScheme.Name"/>.
+            </summary>
+        </member>
+        <member name="F:AspNet.Security.OAuth.GitHub.GitHubAuthenticationDefaults.DisplayName">
+            <summary>
+            Default value for <see cref="P:Microsoft.AspNetCore.Authentication.AuthenticationScheme.DisplayName"/>.
+            </summary>
+        </member>
+        <member name="F:AspNet.Security.OAuth.GitHub.GitHubAuthenticationDefaults.Issuer">
+            <summary>
+            Default value for <see cref="P:Microsoft.AspNetCore.Authentication.AuthenticationSchemeOptions.ClaimsIssuer"/>.
+            </summary>
+        </member>
+        <member name="F:AspNet.Security.OAuth.GitHub.GitHubAuthenticationDefaults.CallbackPath">
+            <summary>
+            Default value for <see cref="P:Microsoft.AspNetCore.Authentication.RemoteAuthenticationOptions.CallbackPath"/>.
+            </summary>
+        </member>
+        <member name="F:AspNet.Security.OAuth.GitHub.GitHubAuthenticationDefaults.AuthorizationEndpoint">
+            <summary>
+            Default value for <see cref="P:Microsoft.AspNetCore.Authentication.OAuth.OAuthOptions.AuthorizationEndpoint"/>.
+            </summary>
+        </member>
+        <member name="F:AspNet.Security.OAuth.GitHub.GitHubAuthenticationDefaults.TokenEndpoint">
+            <summary>
+            Default value for <see cref="P:Microsoft.AspNetCore.Authentication.OAuth.OAuthOptions.TokenEndpoint"/>.
+            </summary>
+        </member>
+        <member name="F:AspNet.Security.OAuth.GitHub.GitHubAuthenticationDefaults.UserInformationEndpoint">
+            <summary>
+            Default value for <see cref="P:Microsoft.AspNetCore.Authentication.OAuth.OAuthOptions.UserInformationEndpoint"/>.
+            </summary>
+        </member>
+        <member name="F:AspNet.Security.OAuth.GitHub.GitHubAuthenticationDefaults.UserEmailsEndpoint">
+            <summary>
+            Default value for <see cref="P:AspNet.Security.OAuth.GitHub.GitHubAuthenticationOptions.UserEmailsEndpoint"/>.
+            </summary>
+        </member>
+        <member name="T:AspNet.Security.OAuth.GitHub.GitHubAuthenticationOptions">
+            <summary>
+            Defines a set of options used by <see cref="T:AspNet.Security.OAuth.GitHub.GitHubAuthenticationHandler"/>.
+            </summary>
+        </member>
+        <member name="P:AspNet.Security.OAuth.GitHub.GitHubAuthenticationOptions.UserEmailsEndpoint">
+            <summary>
+            Gets or sets the address of the endpoint exposing
+            the email addresses associated with the logged in user.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.GitHubAuthenticationExtensions">
+            <summary>
+            Extension methods to add GitHub authentication capabilities to an HTTP application pipeline.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.GitHubAuthenticationExtensions.AddGitHub(Microsoft.AspNetCore.Authentication.AuthenticationBuilder)">
+            <summary>
+            Adds <see cref="T:AspNet.Security.OAuth.GitHub.GitHubAuthenticationHandler"/> to the specified
+            <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationBuilder"/>, which enables GitHub authentication capabilities.
+            </summary>
+            <param name="builder">The authentication builder.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.GitHubAuthenticationExtensions.AddGitHub(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,System.Action{AspNet.Security.OAuth.GitHub.GitHubAuthenticationOptions})">
+            <summary>
+            Adds <see cref="T:AspNet.Security.OAuth.GitHub.GitHubAuthenticationHandler"/> to the specified
+            <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationBuilder"/>, which enables GitHub authentication capabilities.
+            </summary>
+            <param name="builder">The authentication builder.</param>
+            <param name="configuration">The delegate used to configure the OpenID 2.0 options.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.GitHubAuthenticationExtensions.AddGitHub(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,System.String,System.Action{AspNet.Security.OAuth.GitHub.GitHubAuthenticationOptions})">
+            <summary>
+            Adds <see cref="T:AspNet.Security.OAuth.GitHub.GitHubAuthenticationHandler"/> to the specified
+            <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationBuilder"/>, which enables GitHub authentication capabilities.
+            </summary>
+            <param name="builder">The authentication builder.</param>
+            <param name="scheme">The authentication scheme associated with this instance.</param>
+            <param name="configuration">The delegate used to configure the GitHub options.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.GitHubAuthenticationExtensions.AddGitHub(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,System.String,System.String,System.Action{AspNet.Security.OAuth.GitHub.GitHubAuthenticationOptions})">
+            <summary>
+            Adds <see cref="T:AspNet.Security.OAuth.GitHub.GitHubAuthenticationHandler"/> to the specified
+            <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationBuilder"/>, which enables GitHub authentication capabilities.
+            </summary>
+            <param name="builder">The authentication builder.</param>
+            <param name="scheme">The authentication scheme associated with this instance.</param>
+            <param name="caption">The optional display name associated with this instance.</param>
+            <param name="configuration">The delegate used to configure the GitHub options.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationBuilder"/>.</returns>
+        </member>
+    </members>
+</doc>

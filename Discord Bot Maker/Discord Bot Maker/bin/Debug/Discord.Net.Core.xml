@@ -1759,7 +1759,7 @@
                     <see cref="F:Discord.ChannelPermission.ManageChannels"/> will be exempt from slow-mode.
                 </note>
             </remarks>
-            <exception cref="T:System.ArgumentOutOfRangeException">Thrown if the value does not fall within [0, 120].</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown if the value does not fall within [0, 21600].</exception>
         </member>
         <member name="T:Discord.VoiceChannelProperties">
             <summary>
@@ -6054,15 +6054,16 @@
         </member>
         <member name="P:Discord.GuildUserProperties.Channel">
             <summary>
-                Moves a user to a voice channel.
+                Moves a user to a voice channel. If <c>null</c>, this user will be disconnected from their current voice channel.
             </summary>
             <remarks>
                 This user MUST already be in a <see cref="T:Discord.IVoiceChannel"/> for this to work.
+                When set, this property takes precedence over <see cref="P:Discord.GuildUserProperties.ChannelId"/>.
             </remarks>
         </member>
         <member name="P:Discord.GuildUserProperties.ChannelId">
             <summary>
-                Moves a user to a voice channel.
+                Moves a user to a voice channel. Set <see cref="P:Discord.GuildUserProperties.Channel"/> to <c>null</c> to disconnect this user from their current voice channel.
             </summary>
             <remarks>
                 This user MUST already be in a <see cref="T:Discord.IVoiceChannel"/> for this to work.

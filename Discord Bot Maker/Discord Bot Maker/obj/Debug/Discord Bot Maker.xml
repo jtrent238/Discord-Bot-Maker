@@ -80,6 +80,11 @@ node .
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Discord_Bot_Maker.My.Resources.Resources.nitro_banner">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="T:Discord_Bot_Maker.databaseDataSet">
 <summary>
 Represents a strongly typed in-memory cache of data.
